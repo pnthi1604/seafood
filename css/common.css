@@ -1,0 +1,112 @@
+:root {
+    --main-color: #0688cc;
+    --header-height: 100px;
+    --width-search: 85%;
+    --while-color: #fff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin: 0 auto;
+    min-width: 1024px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--main-color);
+    height: var(--header-height);
+}
+
+header .container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+header .logo img {
+    height: var(--header-height);
+}
+
+header .container {
+    display: grid;
+    grid-template-columns: 20% 55% 20% 5%;
+}
+
+header .search, 
+header .buy-now,
+header .shopping-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header .search input {
+    width: var(--width-search);
+    border-radius: 5px;
+    position: absolute;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+}
+
+header .search button {
+    position: absolute;
+    width: 50px;
+    background-color:var(--while-color);
+    border: none;
+    border-radius: 5px;
+    padding: 9px 0px;
+    left: 80%;
+}
+
+header .search button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+header .search button:hover .icon {
+    color: var(--while-color);
+}
+
+header .search .icon {
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #00347c;
+}
+
+header .buy-now {
+    color: var(--while-color);
+    height: 100%;
+}
+
+header .buy-now .icon {
+    font-size: 20px;
+}
+
+header .phone {
+    padding: 4px 16px 4px 0px;
+    border-right: 1px dashed var(--while-color);
+    margin-right: 16px;
+}
+
+header .buy-now .hot-line p {
+    padding: 0;
+    margin: 0;
+    font-weight: 550;
+}
+
+header .hot-line .hot-line-text {
+    color: #064273;
+    font-size: 16px;
+}
+
+header .shopping-cart a {
+    text-decoration: none;
+    color: var(--while-color);
+}
+
+header .shopping-cart a:hover {
+    opacity: 0.6;
+}
+
