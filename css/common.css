@@ -1,9 +1,20 @@
+/* CSS COMMON  */
+
 :root {
     --main-color: #0688cc;
     --header-height: 100px;
     --width-search: 85%;
     --while-color: #fff;
+    --footer-color: #071831;
+    --black-color: #000;
+    --red-color: red;
 }
+
+.square-style {
+    list-style-type: square !important;
+}
+
+/* END CSS COMMON  */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -13,18 +24,26 @@ body {
     box-sizing: border-box;
 }
 
+/* START HEADER  */
+
 header {
     background-color: var(--main-color);
     height: var(--header-height);
 }
 
-header .container {
+header .container,
+footer .container {
     width: 1024px;
+    min-height: var(--header-height);
     margin: 0 auto;
 }
 
-header .logo img {
+header .logo {
     height: var(--header-height);
+}
+
+header .logo img {
+    height: 100%;
 }
 
 header .container {
@@ -40,7 +59,8 @@ header .shopping-cart {
     position: relative;
 }
 
-header .search input {
+header .search input,
+footer .enter-email input {
     width: var(--width-search);
     border-radius: 5px;
     position: absolute;
@@ -49,7 +69,8 @@ header .search input {
     border: none;
 }
 
-header .search button {
+header .search button,
+footer .enter-email button {
     position: absolute;
     width: 50px;
     background-color:var(--while-color);
@@ -59,12 +80,14 @@ header .search button {
     left: 80%;
 }
 
-header .search button:hover {
-    background-color: red;
+header .search button:hover,
+footer .contact .list-item .item:hover {
+    background-color: var(--red-color);
     cursor: pointer;
 }
 
-header .search button:hover .icon {
+header .search button:hover .icon,
+footer .contact .list-item .item:hover .icon {
     color: var(--while-color);
 }
 
@@ -110,3 +133,91 @@ header .shopping-cart a:hover {
     opacity: 0.6;
 }
 
+/* END HEADER  */
+
+/* START FOOTER  */
+
+footer {
+    background-color: var(--footer-color);
+    min-height: var(--header-height);
+    color: var(--while-color);
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: 18% 14% 18% 22% 20%;
+    column-gap: 2%;
+    font-size: 16px;
+}
+
+footer .text-content {
+    text-transform: uppercase;
+}
+
+footer .list-item {
+    list-style-type: none;
+    padding: 0px 0px 0px 16px;
+}
+
+footer .list-item .item {
+    padding: 4px 0px;
+}
+
+footer .contact .list-item {
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+footer .contact .list-item .item {
+    background-color: var(--while-color);
+    margin: 0px 8px 0px 0px;
+    padding: 8px 0px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+footer .contact .item .icon {
+    width: 40px;
+    color: var(--black-color);
+}
+
+footer .list-item a {
+    text-decoration: none;
+    color: var(--while-color);
+}
+
+footer .list-item a:hover {
+    opacity: 0.6;
+}
+
+footer .contact a:hover {
+    opacity: 1;
+}
+
+footer .enter-email {
+    position: relative;
+}
+
+footer .enter-email input {
+    width: 9em !important;
+    height: 10px;
+}
+
+footer .enter-email input:focus {
+    outline: none;
+    border: none;
+}
+
+footer .enter-email button {
+    color: var(--while-color);
+    background-color: var(--red-color);
+    left: 84%;
+    width: 16%;
+    border-radius: 4px;
+}
+
+footer .enter-email button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
