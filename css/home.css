@@ -1,0 +1,85 @@
+/* START HOME */
+main .wrapper-bg img {
+    width: 100%;
+}
+
+.card{
+    
+    position: relative;
+    left: 250px;
+    padding-top: 30px;
+
+    padding-bottom: 20px;
+}
+
+.home{
+    display: grid;
+    max-width: 1024px;
+    margin: 30px auto 10px;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.home-page{
+    position: relative;
+    padding: 5px 5px 5px 60px;
+    margin: 0 10px;
+}
+
+.home-page h3{
+    font-size: 16px;
+    font-weight:700;
+    margin: 0 0 3px 0;
+}
+
+.home-page i{
+    color: var(--main-color);
+    position: absolute;
+    bottom: 50%;
+    left:5%;
+}
+
+.home-page div{
+    text-align: left;
+}
+
+.home-page div p, .content-one p{
+    margin: 10px 0 0 0;
+
+}
+
+.content{
+    display: grid;
+    margin: 0 auto 10px;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.content-one{
+    position: relative;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.content-one .detail-content {
+    font-size: 16px;
+    padding-left: 60px;
+}   
+
+.content-one i{
+    color: var(--main-color);
+    font-size: 40px;
+    position: absolute;
+    top: 80px;
+}
+
+.child{
+    position: relative;
+    color: #064273;
+    font-size: 20px;
+    right: 120px;
+}
+
+/* END HOMEPAGE  */

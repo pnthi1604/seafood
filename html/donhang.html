@@ -12,10 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/contact.css">
-    <link rel="stylesheet" href="../css/form.css">
-    <link rel="stylesheet" href="../css/breakdown.css">
-    <title>Liên Hệ</title>
+    <link rel="stylesheet" href="../css/donhang.css">
+    <title>Đơn hàng</title>
 </head>
 
 <style>
@@ -79,56 +77,58 @@
     </header>
 
     <main>
-        <nav class="breakdown">
-            <a href="trangchu.html">Home</a>
-            <span> » Liên hệ</span>
-        </nav>
-        <div class="contact-container">
-        <div class="contact-content">
-            <h1>Liên Hệ</h1>
-            <div>
-                <i class="fa-solid fa-mobile-screen-button"></i>
-                <span>0999 999 999</span>
-            </div>
-            <div>
-                <i class="fa-regular fa-envelope"></i>
-                <span>seafood.cantho@gmail.com</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-location-dot locate"></i>
-                <span>Đường 3/2, phường Xuân Khánh, quận Ninh Kiều, TP.Cần Thơ</span>
-            </div>
-                <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8414543770973!2d105.76804037426261!3d10.029938972520416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1699009890458!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h1 class="title">Chi tiết đơn hàng</h1>
+
+        <div class="detail-order">
+            <ul class="order-attribute">
+                <li class="attribute" style="width: 10%;">
+                    <input type="checkbox" class="select">
+                </li>
+                <li class="attribute" style="width: 50%;">
+                    Sản phẩm
+                </li>
+                <li class="attribute" style="width: 10%;">
+                    Đơn giá
+                </li>
+                <li class="attribute" style="width: 10%;">
+                    Số lượng
+                </li>
+                <li class="attribute" style="width: 10%;">
+                    Số tiền
+                </li>
+                <li class="attribute" style="width: 10%;">
+                    Thao tác
+                </li>
+            </ul>
+
+            <ul class="product">
+                <li style="width: 10%;">
+                    <input type="checkbox" class="select">
+                </li>
+                <li style="width: 50%;">
+                    <div class="detail">
+                        <img width="100px" src="../resources/img/logo.png" alt="" class="image">
+                        <p class="name">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quos!
+                        </p>
+                    </div>
+                </li>
+                <li style="width: 10%;">
+                    <span class="price">
+                        22.000đ
+                    </span>
+                </li>
+                <li style="width: 10%;">
+                    <button class="subtract">-</button>
+                    <span class="number">1</span>
+                    <button class="add">+</button>
+                </li>
+                <li style="width: 10%;">22.000đ</li>
+                <li style="width: 10%;">
+                    <button class="delete">X</button>
+                </li>
+            </ul>
         </div>
-        <div class="au-form">
-            <form action="">
-                <h4 style="text-align: center;">Liên hệ với chúng tôi</h4>
-                <div class="au-form-name">
-                    <label for="name">Họ và tên</label>
-                    <input type="text" id="name" name="name" autocomplete="off" placeholder="Nhập tên">
-                    <i class="fa-solid fa-user fa-xs"></i>
-                </div>
-                <div class="au-form-phnumber">
-                    <label for="numphone">Số điện thoại</label>
-                    <input type="text" id="numphone" name="numberph" placeholder="Nhập số điện thoại">
-                    <i class="fa-solid fa-phone fa-xs"></i>
-                </div>
-                <div class="au-form-email">
-                    <label for="numphone">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Nhập email">
-                    <i class="fa-solid fa-envelope fa-xs"></i>
-                </div>
-                <div class="au-form-text">
-                    <label for="text">Nội dung</label>
-                    <textarea name="text" id="text" rows="3" placeholder="Nhập nội dung liên hệ"></textarea>
-                </div>
-                <div class="au-form-control">  
-                    <button type="submit"><i id="contact-submit" class="fa-solid fa-paper-plane fa-lg" ></i></button>
-                </div>
-                </div>
-            </form>
-        </div>
-    </div>
     </main>
 
     <footer>
@@ -205,6 +205,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/giohang.js"></script>
 </body>
 
 </html>

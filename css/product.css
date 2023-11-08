@@ -1,0 +1,168 @@
+/*bắt đầu trang sản phẩm*/
+/* bắt đầu chỉnh bố cục và hover*/
+.list-seafood {
+    margin: 10px auto;
+    width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+}
+
+.seafood-name {
+    text-align: center;
+    color: #0688cc;
+    width: 1024px;
+    margin: 10px auto;
+}
+
+.seafood {
+    border: solid 1px #dbe6ed;
+    height: 300px;
+    width: fit-content;
+    border-radius: 5px;
+    position: relative;
+    margin: 8px;
+}
+
+.order {
+    background-color:red;
+    margin-top: 5px;
+    margin-left: 10px;
+    height: 28px;
+    width: 175px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #fff;
+    padding-left: 10px;
+    border: none;
+    position: absolute;
+    display: none;
+}
+
+@keyframes bottom-up {
+    from {
+        bottom: -30px;
+        opacity: 0;
+    } to {
+        bottom: 8px;
+        opacity: 1;
+    }
+}
+
+.order .fas {
+    color: #fff;
+    float: right;
+    margin-right: 25px;
+}
+
+.seafood:hover .order {
+    display: block;
+    animation: bottom-up 0.4s;
+}
+
+.order:hover {
+    background-color: #00347c;
+    cursor: pointer;
+}
+
+.seafood img {
+    height: 180px;
+    width: 180px;
+    padding: 10px;
+}
+
+.seafood p {
+    margin-left: 6%;
+    font-size: 15px;
+    text-align: left;
+    line-height: 5px;
+}
+
+/*kết thúc chỉnh bố cục và hover*/
+/*bắt đầu xem tất cả*/
+
+.seeall {
+    font-size: 16px;
+    width: 100px;
+    background-color: #0688cc;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    position: relative;
+    left: 45%;
+    display: block;
+}
+
+.seeall:hover {
+    background-color: #00347c;
+}
+
+/*kết thúc xem tất cả*/
+/*bắt đầu banner*/
+.banner {
+    margin: 30px auto;
+    max-width: 1024px;
+    
+}
+
+.banner img {
+    width: 1024px;
+    height: 490px;
+    margin-bottom: 15px;
+}
+
+.menu img {
+    height: 245px;
+    width: 245px;
+    margin: 4px;
+    
+}
+
+.cover {
+    position: relative;
+    width: 245px;
+    height: 245px;
+    margin: 4px;
+}
+
+.cover .sleeve {
+	position:absolute;
+    margin: 4px;
+	background-color:#0688cc80;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	opacity:0;
+	transition:opacity 0.2s;
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cover:hover .sleeve {
+    opacity:1;
+}
+
+.menu {
+    display: flex;
+}
+
+.list-product {
+    background-color: #ebe1e180;
+    padding: 10px;
+}
+
+section {
+    background-color: #fff;
+    width: 1024px;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+/*kết thúc banner*/
+/*kết thúc trang sản phẩm*/

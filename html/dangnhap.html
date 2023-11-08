@@ -12,7 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
-    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/breakdown.css">
+    <title>Đăng Nhập</title>
 </head>
 
 <style>
@@ -76,6 +79,48 @@
     </header>
 
     <main>
+        <nav class="breakdown">
+            <a href="trangchu.html">Home</a>
+            <span> » Đăng nhập</span>
+        </div>
+        </nav>
+        <div class="au-form">
+            <form action="">
+                <div class="au-form-header">
+                    <h1>Đăng Nhập</h1>
+                </div>
+                <div class="au-form-phnumber">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                    <i class="fa-solid fa-phone fa-xs"></i>
+                </div>
+                <div class="au-form-pass">
+                    <label for="pass">Mật khẩu</label>
+                    <input type="password" id="pass" placeholder="Nhập mật khẩu">
+                    <i class="fa-solid fa-lock fa-xs"></i>
+                </div>
+                <div class="au-form-control">  
+                    <button type="submit">Đăng nhập</button>
+                </div>
+                <div class="au-form-aside">
+                    <a id="a-fpass" href="">Quên mật khẩu</a>
+                    <a id="a-dn" href="dangky.html">Đăng ký thành viên</a>
+                </div>
+            </form>
+            <div class="au-form-line"> 
+                <div class="line"></div>
+                <p class="au-form-line-text">
+                    HOẶC
+                </p>
+                <div class="line"></div>
+            </div>
+            <div class="au-form-social">
+                <a href="https://www.facebook.com/login"><i class="fa-brands fa-facebook fa-xl"></i></a>
+                <a href="https://accounts.google.com/v3/signin/identifier?ifkv=AVQVeyysa6g5qjlgxNhb4U4WnX6N_HZ12yPxxgPCH33IRmgdzAWSOcbBbI2q10BhTZHDZI0lCraLrw&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-385617335%3A1698161799389036&theme=glif">
+                    <i class="icon fa-brands fa-google fa-xl"></i>
+                </a>
+            </div>
+        </div>
 
     </main>
 

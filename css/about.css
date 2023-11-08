@@ -1,0 +1,47 @@
+.wrapper-about {
+    display: flex;
+    width: 100%;
+}
+
+.introduce{
+    margin: 28px auto;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 20px;
+}
+
+.body .link-web {
+    text-decoration: none;
+    font-size: 20px;
+    color: #0688cc;
+    font-weight: bolder;
+}
+
+.body .main-title {
+    text-transform: uppercase;
+}
+
+.body h1{
+    margin: 0 auto;
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+.body p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.body img {
+    margin: 0 auto;
+    display: block;
+}
+
+/*nodung =Home
+nodung-chhild=home -page
+content=noidung-1
+content-one=noidung-12
+card=mh
+child=mh-1
+introduce=gioi
+body=gioi-thieu*/

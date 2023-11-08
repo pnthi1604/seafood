@@ -20,7 +20,7 @@
 /* END CSS COMMON  */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: 1.2em;
     margin: 0 auto;
     min-width: 1024px;
@@ -138,7 +138,7 @@ header .shopping-cart a {
 }
 
 header .shopping-cart a:hover {
-    opacity: 0.6;
+    color: var(--black-color);
 }
 
 /* START NAVBAR  */
@@ -218,6 +218,7 @@ header nav .list-product {
     display: none;
     width: 25%;
     position: absolute;
+    z-index: 1;
     top: 61px;
     left: 0;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -238,6 +239,16 @@ header .product .link-product:hover {
 /* END NAVBAR  */
 
 /* END HEADER  */
+
+/* START MAIN  */
+
+main{
+    margin: 0 auto;
+    width: 1024px;
+    font-size: 15px
+}
+
+/* END MAIN  */
 
 /* START FOOTER  */
 

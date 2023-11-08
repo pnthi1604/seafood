@@ -1,0 +1,97 @@
+.au-form{
+    border: 1px solid #e5e8eb ;
+    width: 400px;
+    margin: 10px auto;
+    padding: 20px 20px;
+}
+.au-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.au-form-header{
+    text-align: center;
+}
+.au-form-header span{
+    font-size: 14px;
+}
+.au-form-header a{
+    color: var(--main-color);
+}
+.au-form-name, .au-form-phnumber, .au-form-pass,
+.au-form-pass2, .au-form-text, .au-form-email{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.au-form form label{
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+.au-form form input,.au-form-text textarea {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+.au-form-aside{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.au-form-control{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+.au-form-control button{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--hover-color-navbar);
+}
+.au-form-control button:hover{
+    background-color: var(--red-color);
+    cursor: pointer;
+}
+.au-form-line {
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+}
+.au-form-line .line{
+    height: 1px;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+}
+.au-form-line-text {
+    color: var(--black-color);
+    opacity: 0.3;
+    font-size: 13px;
+    padding: 0 5px;
+}
+.au-form-social{
+    text-align: center;
+    margin-top: 5px;
+}
+.au-form-social a{
+    margin: 0 5px; 
+    padding: 10px;
+    border-radius: 50px;
+}
+.au-form-social a:hover{
+    color: var(--red-color);
+}
+.au-form form i{
+    position: absolute;
+    bottom: 30%;
+    right: 2%;
+    font-size: 16px;
+}

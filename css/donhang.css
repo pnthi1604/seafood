@@ -1,0 +1,14 @@
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.detail-order .order-attribute,
+.detail-order .product {
+    display: flex;
+}
+
+.detail-order .product .detail {
+    display: flex;
+}
