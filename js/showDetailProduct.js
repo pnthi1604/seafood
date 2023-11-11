@@ -103,6 +103,7 @@ function renderDetailProduct({name, code, status, price, content, linkImg}) {
     let statusNode = infoNode.querySelector('span.status');
     let contentNode = infoNode.querySelector('.content-product');
     let priceNode = infoNode.querySelector('span.price-header');
+    let unitCode = infoNode.querySelector('span.unit');
 
     //reset detail product
     imgNode.setAttribute('src', linkImg);
@@ -112,6 +113,9 @@ function renderDetailProduct({name, code, status, price, content, linkImg}) {
     statusNode.textContent = status;
     contentNode.textContent = content;
     priceNode.textContent = `Giá: ${price}`;
+    if(code == 'nuoc') {
+        unitCode.innerHTML = "";
+    }
 }
 
 renderDetailProduct(getQueryParams());
