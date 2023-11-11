@@ -1,5 +1,11 @@
 /*bắt đầu trang sản phẩm*/
 /* bắt đầu chỉnh bố cục và hover*/
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
 .list-seafood {
     margin: 10px auto;
     width: 1024px;
@@ -16,11 +22,12 @@
 
 .seafood {
     border: solid 1px #dbe6ed;
-    height: 300px;
+    height: 250px;
     width: fit-content;
     border-radius: 5px;
     position: relative;
     margin: 8px;
+    text-align: center;
 }
 
 .order {
@@ -59,6 +66,10 @@
     animation: bottom-up 0.4s;
 }
 
+.seafood:hover {
+    height: 280px;
+}
+
 .order:hover {
     background-color: #00347c;
     cursor: pointer;
@@ -70,11 +81,15 @@
     padding: 10px;
 }
 
-.seafood p {
+.seafood .detail-price {
     margin-left: 6%;
     font-size: 15px;
     text-align: left;
     line-height: 5px;
+}
+
+.seafood .detail-price .price {
+    display: inline;
 }
 
 /*kết thúc chỉnh bố cục và hover*/
