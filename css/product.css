@@ -1,14 +1,9 @@
 /*bắt đầu trang sản phẩm*/
 /* bắt đầu chỉnh bố cục và hover*/
 
-p {
-    padding: 0;
-    margin: 0;
-}
-
 .list-seafood {
     margin: 10px auto;
-    width: 1024px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5,20%);
 }
@@ -22,26 +17,33 @@ p {
 
 .seafood {
     border: solid 1px #dbe6ed;
-    height: 250px;
-    width: fit-content;
+    height: 230px;
+    /* width: fit-content; */
     border-radius: 5px;
     position: relative;
     margin: 8px;
     text-align: center;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.name-product,
+.price {
+    padding: 0;
+    margin: 0;
 }
 
 .order {
-    background-color:red;
-    margin-top: 5px;
-    margin-left: 10px;
+    background-color: red;
     height: 28px;
-    width: 175px;
+    width: 176px;
     border-radius: 3px;
     font-size: 12px;
     color: #fff;
-    padding-left: 10px;
     border: none;
     position: absolute;
+    left: 5px;
+    bottom: 7px;
     display: none;
 }
 
@@ -67,7 +69,7 @@ p {
 }
 
 .seafood:hover {
-    height: 280px;
+    height: 264px;
 }
 
 .order:hover {
@@ -78,7 +80,6 @@ p {
 .seafood img {
     height: 180px;
     width: 180px;
-    padding: 10px;
 }
 
 .seafood .detail-price {
@@ -104,8 +105,9 @@ p {
     padding: 12px;
     text-decoration: none;
     position: relative;
-    left: 45%;
     display: block;
+    margin: 0 auto;
+    bottom: 10px;
 }
 
 .seeall:hover {
@@ -170,14 +172,14 @@ p {
 .list-product {
     background-color: #ebe1e180;
     padding: 10px;
+    width: 100%;
 }
 
 section {
     background-color: #fff;
     width: 1024px;
-    margin: 20px auto;
+    margin: 0 auto;
     border-radius: 5px;
-    padding: 10px;
 }
 /*kết thúc banner*/
 /*kết thúc trang sản phẩm*/
