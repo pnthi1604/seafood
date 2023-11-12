@@ -503,11 +503,11 @@
         <div class="container">
             <div class="clean-seafood">
                 <h4>THỰC PHẨM SẠCH</h4>
-                <d class="name-product"iv class="info">
+                <div class="info">
                     <p><b>Nhà hàng seafood</b></p>
                     <p><b>MST</b>: 0311782180-111</p>
                     <p><b>Trụ sở doanh nghiệp</b>: Đường 3/2, phường Xuân Khánh, quận Ninh Kiều, TP.Cần Thơ</p>
-                </d>
+                </div>
             </div>
             <div class="about-us">
                 <p class="text-content">
@@ -565,8 +565,8 @@
                     <p class="text-content">
                         Đăng ký nhận tin
                     </p>            
-                    <form class="enter-email">
-                        <input type="text" placeholder="Nhập địa chỉ email">
+                    <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="Nhập địa chỉ email" name="email">
                         <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
                     </form>
                 </div>
@@ -574,6 +574,7 @@
         </div>
     </footer>
 
+    <script src="../js/validatorForm.js"></script>
     <script src="../js/showDetailProduct.js"></script>
 </body>
 

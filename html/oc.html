@@ -236,8 +236,8 @@
                     <p class="text-content">
                         Đăng ký nhận tin
                     </p>            
-                    <form class="enter-email">
-                        <input type="text" placeholder="Nhập địa chỉ email">
+                    <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="Nhập địa chỉ email" name="email">
                         <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
                     </form>
                 </div>
@@ -245,6 +245,7 @@
         </div>
     </footer>
 
+    <script src="../js/validatorForm.js"></script>
     <script src="../js/showDetailProduct.js"></script>
 </body>
 
