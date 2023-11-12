@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/breakdown.css">
     <title>Đăng Ký</title>
@@ -85,29 +84,29 @@
             </div>
         </nav>
         <div class="au-form">
-        <form method="get" name="form" onsubmit="return formValid(this)">
+        <form name="form" action="" method="post" enctype="multipart/form-data" class="need-validator">
             <div class="au-form-header">
                 <h1>Đăng Ký</h1>
                 <span>Bạn đã có tài khoản? <a id="a-pass" href="dangnhap.html">Đăng nhập</a></span>
             </div>
             <div class="au-form-name">
-                <label for="name">Họ và tên</label>
-                <input type="text" id="name" name="name" autocomplete="off" placeholder="Nhập tên">
+                <label for="username">Họ và tên</label>
+                <input type="text" id="username" name="username" autocomplete="off" placeholder="Nhập tên">
                 <i class="fa-solid fa-user fa-xs"></i>
             </div>
             <div class="au-form-phnumber">
                 <label for="numphone">Số điện thoại</label>
-                <input type="text" id="numphone" name="numberph" placeholder="Nhập số điện thoại">
+                <input type="text" id="numphone" name="phone-number" placeholder="Nhập số điện thoại">
                 <i class="fa-solid fa-phone fa-xs"></i>
             </div>
             <div class="au-form-pass">
                 <label for="pw">Mật khẩu</label>
-                <input type="password" id="pw" name="pass" placeholder="Nhập mật khẩu">
+                <input type="password" id="pw" name="password" placeholder="Nhập mật khẩu">
                 <i class="fa-solid fa-lock fa-xs"></i>
             </div>
             <div class="au-form-pass2">
                 <label for="pw2">Xác nhận mật khẩu</label>
-                <input type="password" id="pw2" name="pass2" placeholder="Nhập lại mật khẩu">
+                <input type="password" id="pw2" name="password" placeholder="Nhập lại mật khẩu">
                 <i class="fa-solid fa-lock fa-xs"></i>
             </div>
             <div class="au-form-aside">
@@ -117,7 +116,7 @@
                 </span>
             </div>
             <div class="au-form-control">
-                <button type="reset" >Hủy</button>   
+                <button type="reset">Hủy</button>   
                 <button type="submit">Đăng ký</button>
             </div>
         </form>
@@ -201,8 +200,8 @@
                     <p class="text-content">
                         Đăng ký nhận tin
                     </p>            
-                    <form class="enter-email">
-                        <input type="text" placeholder="Nhập địa chỉ email">
+                    <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="Nhập địa chỉ email" name="email">
                         <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
                     </form>
                 </div>
@@ -210,6 +209,7 @@
         </div>
     </footer>
     
+    <script src="../js/validatorForm.js"></script>
 </body>
 
 </html>

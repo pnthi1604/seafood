@@ -101,16 +101,16 @@
                 <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8414543770973!2d105.76804037426261!3d10.029938972520416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1699009890458!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="au-form">
-            <form action="">
+            <form name="form" action="" method="post" enctype="multipart/form-data" class="need-validator">
                 <h4 style="text-align: center;">Liên hệ với chúng tôi</h4>
                 <div class="au-form-name">
                     <label for="name">Họ và tên</label>
-                    <input type="text" id="name" name="name" autocomplete="off" placeholder="Nhập tên">
+                    <input type="text" id="name" name="username" autocomplete="off" placeholder="Nhập tên">
                     <i class="fa-solid fa-user fa-xs"></i>
                 </div>
                 <div class="au-form-phnumber">
                     <label for="numphone">Số điện thoại</label>
-                    <input type="text" id="numphone" name="numberph" placeholder="Nhập số điện thoại">
+                    <input type="text" id="numphone" name="phone-number" placeholder="Nhập số điện thoại">
                     <i class="fa-solid fa-phone fa-xs"></i>
                 </div>
                 <div class="au-form-email">
@@ -120,11 +120,12 @@
                 </div>
                 <div class="au-form-text">
                     <label for="text">Nội dung</label>
-                    <textarea name="text" id="text" rows="3" placeholder="Nhập nội dung liên hệ"></textarea>
+                    <textarea name="contact" id="text" rows="3" placeholder="Nhập nội dung liên hệ"></textarea>
                 </div>
                 <div class="au-form-control">  
-                    <button type="submit"><i id="contact-submit" class="fa-solid fa-paper-plane fa-lg" ></i></button>
-                </div>
+                    <button type="submit">
+                        <i id="contact-submit" class="fa-solid fa-paper-plane fa-lg" ></i>
+                    </button>
                 </div>
             </form>
         </div>
@@ -197,14 +198,16 @@
                     <p class="text-content">
                         Đăng ký nhận tin
                     </p>            
-                    <form class="enter-email">
-                        <input type="text" placeholder="Nhập địa chỉ email">
+                    <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="Nhập địa chỉ email" name="email">
                         <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
                     </form>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script src="../js/validatorForm.js"></script>
 </body>
 
 </html>

@@ -37,8 +37,6 @@ let listDetailProduct = [
     },
 ];
 
-let template = "../resources/img/anhsanpham/tom/tom2.jpg";
-
 function getCodeStatusContent(type) {
     for(let i = 0; i < listDetailProduct.length; i++) {
         const detailProduct = listDetailProduct[i];

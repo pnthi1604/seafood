@@ -85,18 +85,18 @@
         </div>
         </nav>
         <div class="au-form">
-            <form action="">
+            <form name="form" action="" method="post" enctype="multipart/form-data" class="need-validator">
                 <div class="au-form-header">
                     <h1>Đăng Nhập</h1>
                 </div>
                 <div class="au-form-phnumber">
                     <label for="phone">Số điện thoại</label>
-                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại" name="phone-number">
                     <i class="fa-solid fa-phone fa-xs"></i>
                 </div>
                 <div class="au-form-pass">
                     <label for="pass">Mật khẩu</label>
-                    <input type="password" id="pass" placeholder="Nhập mật khẩu">
+                    <input type="password" id="pass" placeholder="Nhập mật khẩu" name="password">
                     <i class="fa-solid fa-lock fa-xs"></i>
                 </div>
                 <div class="au-form-control">  
@@ -190,14 +190,16 @@
                     <p class="text-content">
                         Đăng ký nhận tin
                     </p>            
-                    <form class="enter-email">
-                        <input type="text" placeholder="Nhập địa chỉ email">
+                    <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="Nhập địa chỉ email" name="email">
                         <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
                     </form>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script src="../js/validatorForm.js"></script>
 </body>
 
 </html>
