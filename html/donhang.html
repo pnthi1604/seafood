@@ -12,21 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/donhang.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <title>Đơn hàng</title>
 </head>
-
-<style>
-</style>
 
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="trangchu.html">
-                    <img src="../resources/img/logo.png" alt="logo page">
-                </a>
-            </div>
+            <a href="trangchu.html" class="logo">
+                <img src="../resources/img/logo.png" alt="logo page">
+            </a>
 
             <form class="search">
                 <input type="text" placeholder="Tìm kiếm...">
@@ -41,11 +36,9 @@
                 </div>
             </div>
 
-            <div class="shopping-cart">
-                <a href="">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            </div>
+            <a href="donhang.html" class="shopping-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
         </div>
 
         <nav>
@@ -53,15 +46,14 @@
                 <div class="category">
                     <i class="icon list fa-solid fa-list"></i>
                     <span class="text-content">
-                        Danh mục sản phẩm
+                        Menu
                     </span>
                     <ul class="list-product">
-                        <li class="product"><a href="" class="link-product">Tôm biển</a></li>
-                        <li class="product"><a href="" class="link-product">Cá biển</a></li>
-                        <li class="product"><a href="" class="link-product">Cua biển</a></li>
-                        <li class="product"><a href="" class="link-product">Hải sâm</a></li>
-                        <li class="product"><a href="" class="link-product">Hàu sữa</a></li>
-                        <li class="product"><a href="" class="link-product">Hải sản nhập khẩu</a></li>
+                        <li class="product"><a href="../html/tom.html" class="link-product">Tôm Biển</a></li>
+                        <li class="product"><a href="../html/cua.html" class="link-product">Cua - Ghẹ Biển</a></li>
+                        <li class="product"><a href="../html/ca.html" class="link-product">Cá Biển</a></li>
+                        <li class="product"><a href="../html/oc.html" class="link-product">Ốc Biển</a></li>
+                        <li class="product"><a href="../html/monan.html" class="link-product">Món Ăn</a></li>
                     </ul>
                 </div>
                 <ul class="list-item">
@@ -82,7 +74,7 @@
         <div class="detail-order">
             <ul class="order-attribute">
                 <li class="attribute" style="width: 10%;">
-                    <input type="checkbox" class="select">
+                    <p>Chọn Sản Phẩm</p>
                 </li>
                 <li class="attribute" style="width: 50%;">
                     Sản phẩm
@@ -97,13 +89,13 @@
                     Số tiền
                 </li>
                 <li class="attribute" style="width: 10%;">
-                    Thao tác
+                    Xóa sản phẩm
                 </li>
             </ul>
 
             <ul class="product">
                 <li style="width: 10%;">
-                    <input type="checkbox" class="select">
+                    <input type="checkbox" class="select" class=" active">
                 </li>
                 <li style="width: 50%;">
                     <div class="detail">
@@ -119,16 +111,34 @@
                     </span>
                 </li>
                 <li style="width: 10%;">
-                    <button class="subtract">-</button>
-                    <span class="number">1</span>
-                    <button class="add">+</button>
+                    <div >
+                        <button class="subtract">-</button>
+                        <span class="number">1</span>
+                        <button class="add">+</button>
+                    </div>
                 </li>
                 <li style="width: 10%;">22.000đ</li>
                 <li style="width: 10%;">
-                    <button class="delete">X</button>
+                    <div>
+                        <button class="delete">X</button>
+                    </div>
+                    
                 </li>
             </ul>
         </div>
+        <table class="buy">
+            <tr>
+                <td><a class="return" href="sanpham.html">TIẾP TỤC MUA HÀNG</a></td>
+                <td class="text"><p>TỔNG TIỀN THANH TOÁN</p></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="number"><p class="invoice-price">20.000Đ</p></td>
+            </tr>
+            <tr>
+                <td class="shopping" colspan="2"><button >TIẾN HÀNH THANH TOÁN</button></td>
+            </tr>
+        </table>
+
     </main>
 
     <footer>
@@ -199,15 +209,16 @@
                     </p>            
                     <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
                         <input type="text" placeholder="Nhập địa chỉ email" name="email">
-                        <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
+                        <button type="submit">
+                            <i class="icon letter fa-regular fa-envelope"></i>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../js/validatorForm.js"></script>
-    <script src="../js/giohang.js"></script>
+    <script src="../js/handleCart.js"></script>
 </body>
 
 </html>
