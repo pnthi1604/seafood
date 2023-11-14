@@ -19,12 +19,15 @@
 
 /* END CSS COMMON  */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: 1.2em;
     margin: 0 auto;
-    min-width: 1024px;
-    box-sizing: border-box;
+    width: 100%;
 }
 
 ul {
@@ -41,22 +44,23 @@ header {
 
 header .container,
 footer .container {
-    width: 1024px;
     min-height: var(--height-header);
     margin: 0 auto;
 }
 
 header .logo {
     height: var(--height-header);
+    display: block;
 }
 
 header .logo img {
-    height: 100%;
+    height: var(--height-header);
+    max-width: 100%;
 }
 
 header .container {
     display: grid;
-    grid-template-columns: 20% auto 20% 5%;
+    grid-template-columns: 20% auto 20% 10%;
 }
 
 header .search, 
@@ -64,28 +68,31 @@ header .buy-now,
 header .shopping-cart {
     display: flex;
     align-items: center;
-    position: relative;
+    margin: auto 12px;
+}
+
+header .shopping-cart {
+    text-decoration: none;
+    color: var(--while-color);
 }
 
 header .search input,
 footer .enter-email input {
     width: var(--width-search);
     border-radius: 5px;
-    position: absolute;
     font-size: 16px;
     padding: 12px;
     border: none;
+    margin-right: 4px;
 }
 
 header .search button,
 footer .enter-email button {
-    position: absolute;
     width: 50px;
     background-color:var(--while-color);
     border: none;
     border-radius: 5px;
     padding: 9px 0px;
-    left: 80%;
 }
 
 header .search button:hover,
@@ -108,7 +115,9 @@ header .search .icon {
 
 header .buy-now {
     color: var(--while-color);
-    height: 100%;
+    margin: auto 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 header .buy-now .icon {
@@ -116,29 +125,25 @@ header .buy-now .icon {
 }
 
 header .phone {
-    padding: 4px 16px 4px 0px;
+    padding: 8px;
     border-right: 1px dashed var(--while-color);
-    margin-right: 16px;
+    margin-right: 8px;
 }
 
 header .buy-now .hot-line p {
     padding: 0;
     margin: 0;
     font-weight: 550;
+    font-size: 14px;
 }
 
 header .hot-line .hot-line-text {
     color: #064273;
-    font-size: 16px;
 }
 
-header .shopping-cart a {
-    text-decoration: none;
-    color: var(--while-color);
-}
-
-header .shopping-cart a:hover {
+header .shopping-cart:hover {
     color: var(--black-color);
+    cursor: pointer;
 }
 
 /* START NAVBAR  */
@@ -151,7 +156,6 @@ header nav {
 header .nav-bar {
     display: grid;
     grid-template-columns: 25% auto;
-    width: 1024px;
     margin: 0 auto;
     font-size: 16px;
     position: relative;
@@ -166,6 +170,7 @@ header .nav-bar .category {
     color: var(--while-color);
     display: grid;
     grid-template-columns: 25% auto;
+    column-gap: 10px;
 }
 
 header .nav-bar .category:hover {
@@ -182,8 +187,12 @@ header .category .icon {
     padding: 8px;
 }
 
+header .category span.text-content {
+    padding-top: 10px;
+}
+
 header .nav-bar .list-item {
-    padding: 10px 0 10px 32px;
+    padding: 10px 8px;
     margin: 0;
     list-style-type: none;
     display: grid;
@@ -244,7 +253,6 @@ header .product .link-product:hover {
 
 main{
     margin: 0 auto;
-    width: 1024px;
     font-size: 15px
 }
 
@@ -263,6 +271,7 @@ footer .container {
     grid-template-columns: 18% 14% 18% 22% 20%;
     column-gap: 2%;
     font-size: 16px;
+    padding: 10px 10px;
 }
 
 footer .text-content {
@@ -278,22 +287,25 @@ footer .list-item .item {
     padding: 4px 0px;
 }
 
+footer .contact .contact-with-us {
+    max-width: 204px;
+}
+
 footer .contact .list-item {
     padding: 0;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8px;
 }
 
 footer .contact .list-item .item {
     background-color: var(--while-color);
-    margin: 0px 8px 0px 0px;
     padding: 8px 0px;
     text-align: center;
     border-radius: 4px;
 }
 
 footer .contact .item .icon {
-    width: 40px;
     color: var(--black-color);
 }
 
@@ -311,11 +323,12 @@ footer .contact a:hover {
 }
 
 footer .enter-email {
-    position: relative;
+    display: flex;
+    min-width: 204px;
+    width: 204px;
 }
 
 footer .enter-email input {
-    width: 9em !important;
     height: 10px;
 }
 
@@ -327,8 +340,7 @@ footer .enter-email input:focus {
 footer .enter-email button {
     color: var(--while-color);
     background-color: var(--red-color);
-    left: 84%;
-    width: 16%;
+    width: 40px;
     border-radius: 4px;
 }
 
@@ -336,3 +348,47 @@ footer .enter-email button:hover {
     cursor: pointer;
     opacity: 0.6;
 }
+
+/* END FOOTER  */
+
+/* START RESPONSIVE  */
+
+@media (min-width: 1024px) {
+    header .container,
+    footer .container,
+    main, 
+    header .nav-bar {
+        max-width: 1024px;
+    }
+
+    header .buy-now .hot-line p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+    header .container,
+    footer .container,
+    main, 
+    header .nav-bar {
+        min-width: 769px;
+    }
+
+    header .nav-bar .list-item {
+        padding: 10px 8px;
+    }
+
+    footer .container {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 30% 40% 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .container {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* END RESPONSIVE  */

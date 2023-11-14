@@ -1,7 +1,3 @@
-let debug = (e) => {
-    console.log("debugging");
-    console.log(e);
-}
 let products = document.querySelectorAll(".seafood");
 
 let listDetailProduct = [
