@@ -1,6 +1,93 @@
 /* START HOME */
-main .wrapper-bg img {
+.main-slider {
+    margin: 0 auto;
+}
+
+.slider-item {
+    min-height: 300px;
+    position: relative;
+}
+
+.prev-animation {
+    animation: linear 0.5s showRightToLeft;
+}
+
+.next-animation {
+    animation: linear 0.5s showLeftToRight;
+}
+
+.main-slider img {
     width: 100%;
+}
+
+.slider-wrapper button {
+    width: 20px;
+    height: 60px;
+    cursor: pointer; 
+    border: 1px solid #064273; 
+    background-color: transparent; 
+    color: #064273;
+    font-size: 20px; 
+}
+
+.slider-wrapper button:hover {
+    background-color: #064273; 
+    color: #fff;
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slider-wrapper button.prev,
+.slider-wrapper button.next {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 30px);
+}
+
+.slider-wrapper button.next {
+    right: 0%;
+}
+
+@keyframes showLeftToRight {
+    from {
+        left: -50%;
+        opacity: 0;
+    } to {
+        opacity: 1;
+        left: 0%;
+    }
+}
+
+@keyframes showRightToLeft {
+    from {
+        right: -50%;
+        opacity: 0;
+    } to {
+        opacity: 1;
+        right: 0%;
+    }
+}
+
+@keyframes showLeftToRightNone {
+    from {
+        left: 0%;
+        opacity: 1;
+    } to {
+        opacity: 0;
+        left: 50%;
+    }
+}
+
+@keyframes showRightToLeftNone {
+    from {
+        right: 0%;
+        opacity: 1;
+    } to {
+        opacity: 0;
+        right: 50%;
+    }
 }
 
 .card{
