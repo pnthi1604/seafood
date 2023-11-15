@@ -344,14 +344,16 @@ function renderCart() {
     }
 
     let deleteBtns = detailOrder.querySelectorAll('button.delete');
-    for(let i = 0; i < deleteBtns.length; i++) {
-        let deleteBtn = deleteBtns[i];
-        let code = deleteBtn.getAttribute('code');
-        deleteBtn.addEventListener('click', (event) => {
-            checkedBoxs[code] = false;
-            localStorage.removeItem(code);
-            renderCart();
-        });
+    if(!isNull(deleteBtns)) {
+        for(let i = 0; i < deleteBtns.length; i++) {
+            let deleteBtn = deleteBtns[i];
+            let code = deleteBtn.getAttribute('code');
+            deleteBtn.addEventListener('click', (event) => {
+                checkedBoxs[code] = false;
+                localStorage.removeItem(code);
+                renderCart();
+            });
+        }
     }
 }
 
