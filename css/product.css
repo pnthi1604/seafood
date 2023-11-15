@@ -129,14 +129,7 @@
 /*bắt đầu banner*/
 .banner {
     margin: 30px auto;
-    width: 100%;
-    
-}
-
-.banner img {
-    width: 100%;
-    height: 490px;
-    margin-bottom: 15px;
+    max-width: 100%;
 }
 
 .menu img {
@@ -146,7 +139,7 @@
 
 .cover {
     position: relative;
-    height: 245px;
+    width: 100%;
 }
 
 .cover .sleeve {
@@ -168,7 +161,7 @@
 }
 
 .cover:hover .sleeve {
-    opacity:1;
+    opacity: 1;
 }
 
 .menu {
@@ -204,10 +197,17 @@ section {
     }
 
     .menu {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 12px;
-        row-gap: 12px;
+        margin: 20px;
+        row-gap: 40px;
+    }
+
+    .cover {
+        text-align: center;
+    }
+
+    .menu img {
+        max-width: 300px;
     }
 
     .order {
@@ -225,6 +225,20 @@ section {
 }
 
 @media (max-width: 768px) {
+    .list-seafood {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .order {
+        margin-left: 15%;
+        width: 70%;
+    }
 }
 
 /* END RESPONSIVE  */
