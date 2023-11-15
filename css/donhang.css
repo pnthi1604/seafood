@@ -4,6 +4,12 @@ ul, li {
     list-style-type: none;
 }
 
+.img-product {
+    width: 16%;
+    padding: 8px;
+    margin-left: 16px;
+}
+
 .detail-order .order-attribute,
 .detail-order .product {
     display: flex;

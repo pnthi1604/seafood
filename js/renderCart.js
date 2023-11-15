@@ -195,79 +195,167 @@ function isNull(element) {
     return element == undefined;
 }
 
-// ADD CART IN DETAIL PAGE 
-
-let numberOrderNode = document.querySelector('input#amount');
-let addCartBtn = document.querySelector('.add-cart');
-let imgNode = document.querySelector('.hinh1');
-
-function findCodeProduct(src) {
-    //index == code
-    for(let i = 0; i < allProduct.length; i++) {
-        let product = allProduct[i];
-        if(product.src == src) {
-            return i;
+function handleShowPrice(price) {
+    if(typeof price !== "string") {
+        price = price.toString();
+    }
+    let handlePrice = "";
+    let i;
+    for(i = price.length - 1; i - 2 > 0; i -= 3) {
+        for(let j = i; j >= i - 2; j--) {
+            handlePrice = price[j] + handlePrice;
+            debug({handlePrice});
         }
+        handlePrice = '.' + handlePrice;
     }
-    return undefined;
+    while(i != -1) {
+        handlePrice = price[i] + handlePrice;
+        i--;
+    }
+    return handlePrice;
 }
 
-function getSum(val1, val2) {
-    return Number(val1) + Number(val2);
+//create array checkedBoxs
+//checkBoxs[code] == true <=> checkedBox of allProduct[code] is checked
+let checkedBoxs = [];
+for (let i = 0; i < allProduct.length; i++) {
+    checkedBoxs[i] = false;
 }
 
+let detailOrder = document.querySelector('.detail-order');
 
-function addCart(code, numberOrder) {
-    if(typeof localStorage[code] === "undefined") {
-        localStorage.setItem(code, numberOrder);
-    } else {
-        let current = localStorage.getItem(code);
-        let total = getSum(numberOrder, current);
-        localStorage[code] = Math.min(100, total);
+function createNode(nameTag, nameClass) {
+    let element = document.createElement(nameTag);
+    element.classList.add(nameClass);
+    return element;
+}
+
+function getTotalValueProduct({number, price, code}) {
+    let total = Number(number) * Number(price);
+    return total;
+}
+
+function checkedBoxProduct({product, code}) {
+    product.querySelector('.select').checked = checkedBoxs[code];
+}
+
+function renderContentProduct({product, code}) {
+    let {src, name, price} = allProduct[code];
+    let number = localStorage[code];
+    let totalPrice = getTotalValueProduct({number, price, code});
+    totalPrice = handleShowPrice(totalPrice);
+    price = handleShowPrice(price);
+    product.innerHTML = `            
+        <li style="width: 10%;">
+            <input type="checkbox" class="select" code="${code}">
+        </li>
+        <li style="width: 50%;">
+            <div class="detail">
+                <img width="100px" src="${src}"" class="img-product">
+                <p class="name">
+                    ${name}
+                </p>
+            </div>
+        </li>
+        <li style="width: 10%;">
+            <span class="price">
+                ${price}đ
+            </span>
+        </li>
+        <li style="width: 10%;">
+            <div >
+                <span class="number">${localStorage[code]}</span>
+            </div>
+        </li>
+        <li style="width: 10%;">${totalPrice}đ</li>
+        <li style="width: 10%;">
+            <div>
+                <button class="delete" code="${code}"  onclick="deleteItem(this)">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        </li>`;
+    checkedBoxProduct({product, code});
+}
+
+function renderCart() {
+    detailOrder.innerHTML =
+    `<ul class="order-attribute">
+        <li class="attribute" style="width: 10%;">
+            <p>Chọn Sản Phẩm</p>
+        </li>
+        <li class="attribute" style="width: 50%;">
+            Sản phẩm
+        </li>
+        <li class="attribute" style="width: 10%;">
+            Đơn giá
+        </li>
+        <li class="attribute" style="width: 10%;">
+            Số lượng
+        </li>
+        <li class="attribute" style="width: 10%;">
+            Số tiền
+        </li>
+        <li class="attribute" style="width: 10%;">
+            Xóa sản phẩm
+        </li>
+    </ul>`;
+    for (let i = 0; i < localStorage.length; i++) {
+        let code = localStorage.key(i);
+        let product = createNode('ul', 'product');
+        renderContentProduct({product, code});
+        detailOrder.append(product);
     }
 }
 
-function HandleAddCart({numberOrder, imgSrc}) {
-    if(!isNull(numberOrderNode)) {
-        numberOrder = numberOrderNode.value;
-    } else {
-        numberOrder = 1;
-    }
-    if(!isNull(imgNode)) {
-        imgSrc = imgNode.getAttribute('src');
-    }
-    let code = findCodeProduct(imgSrc);
-    if(!isNull(code)) {
-        addCart(code, numberOrder);
+function updateCheckBox() {
+    let checkBoxs = document.querySelectorAll('.select');
+    for(let i = 0; i < checkBoxs.length; i++) {
+        let checkBox = checkBoxs[i];
+        let code = checkBox.getAttribute('code');
+        checkedBoxs[code] = checkBox.checked;
     }
 }
 
-if(!isNull(addCartBtn)) {
-    addCartBtn.addEventListener('click', (event) => {
-        HandleAddCart({});
-    });
+renderCart();
+
+window.onstorage = function() {
+    renderCart();
 }
 
-
-// ADD CART IN SANPHAM PAGE  
-
-let orderBtns = document.querySelectorAll('.order');
-
-function handerInfoProduct({orderBtn}) {
-    let parentNode = orderBtn.parentNode;
-    let imgNode = parentNode.querySelector('img');
-    imgSrc = imgNode.getAttribute('src');
-    HandleAddCart({imgSrc});
+function deleteItem(btn) {
+    let code = btn.getAttribute("code");
+    updateCheckBox();
+    checkedBoxs[code] = false;
+    localStorage.removeItem(code);
+    renderCart();
 }
 
-if(!isNull(orderBtns)) {
-    orderBtns.forEach((orderBtn) => {
-        orderBtn.addEventListener('click', (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            handerInfoProduct({orderBtn});
-            orderBtn.innerHTML = `
-            ĐÃ THÊM<i class="fas fa-shopping-basket"></i>`;
+let checkBoxInputs = document.querySelectorAll('.select');
+
+function renderTotalMoneyAllProduct(totalMoneyAllProduct) {
+    let totalMoneyNode = document.querySelector('.invoice-price');
+    if(!isNull(totalMoneyNode)) {
+        totalMoneyNode.textContent = `${handleShowPrice(totalMoneyAllProduct)}Đ`;
+    }
+}
+
+if(!isNull(checkBoxInputs)) {
+    let totalMoneyAllProduct = 0;
+    for(let i = 0; i < checkBoxInputs.length; i++) {
+        let checkBoxInput = checkBoxInputs[i];
+        checkBoxInput.addEventListener('change', (event) => {
+            let code = checkBoxInput.getAttribute('code');
+            checkedBoxs[code] = checkBoxInput.checked;
+            let number = localStorage[code];
+            let price = allProduct[code].price;
+            let totalMoneyProdcut = getTotalValueProduct({number, price, code});
+            if(checkBoxInput.checked) {
+                totalMoneyAllProduct += totalMoneyProdcut;
+            } else {
+                totalMoneyAllProduct -= totalMoneyProdcut;
+            }
+            renderTotalMoneyAllProduct(totalMoneyAllProduct);
         });
-    });
+    }
 }

@@ -12,6 +12,7 @@ ul, li {
 .detail-order .product .detail {
     display: flex;
 }
+
 .detail-order ul li {
     border: 1px solid #dbe6ed;
     display: flex;
@@ -20,6 +21,19 @@ ul, li {
     justify-content: center;
     
 }
+
+.product .img-product {
+    width: 16%;
+    padding: 8px;
+    margin-left: 16px;
+}
+
+.product .name {
+    line-height: 50px;
+    margin-left: 16px;
+    font-size: 16px;
+}
+
 .delete {
     width: 25px;
     color: #00347c;
@@ -27,12 +41,16 @@ ul, li {
     border: #fff;
     font-weight: bold;
 }
+
 .delete:hover {
     background-color: #00347c;
     color: #fff;
 }
+
 .detail-order .order-attribute {
     color: #0688cc;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .title::before{
@@ -40,6 +58,7 @@ ul, li {
     font-weight: bold;
     color: red;
 }
+
 .return {
     text-decoration: none;
     font-weight: bold;
@@ -47,20 +66,25 @@ ul, li {
     padding: 5px;
     background-color: #dbe6ed;
 }
+
 .return:hover {
     background-color: #00347c;
     color: #fff;
     border-radius: 5px;
 }
+
 .text {
     text-align: right;
 }
+
 .number {
     text-align: right;
 }
+
 .shopping {
     text-align: right;
 }
+
 .shopping button {
     font-weight: bold;
     color: #00347c;
@@ -68,18 +92,22 @@ ul, li {
     padding: 5px;
     background-color: #dbe6ed;
 }
+
 .shopping button:hover {
     background-color: #00347c;
     color: #fff;
     border-radius: 5px;
 }
+
 table {
     margin: 10px 0px;
     width: 1024px;
 }
-.text p{
+
+.text p {
     font-size: 14px;
 }
+
 .invoice-price {
     margin: 0;
 }
