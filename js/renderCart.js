@@ -204,7 +204,6 @@ function handleShowPrice(price) {
     for(i = price.length - 1; i - 2 > 0; i -= 3) {
         for(let j = i; j >= i - 2; j--) {
             handlePrice = price[j] + handlePrice;
-            debug({handlePrice});
         }
         handlePrice = '.' + handlePrice;
     }
@@ -270,7 +269,7 @@ function renderContentProduct({product, code}) {
         <li style="width: 10%;">${totalPrice}đ</li>
         <li style="width: 10%;">
             <div>
-                <button class="delete" code="${code}"  onclick="deleteItem(this)">
+                <button class="delete" code="${code}">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
@@ -278,7 +277,30 @@ function renderContentProduct({product, code}) {
     checkedBoxProduct({product, code});
 }
 
+function renderTotalMoneyAllProduct(totalMoneyAllProduct) {
+    let totalMoneyNode = document.querySelector('.invoice-price');
+    if(!isNull(totalMoneyNode)) {
+        totalMoneyNode.textContent = `${handleShowPrice(totalMoneyAllProduct)}Đ`;
+    }
+}
+
+function updateTotalMoneyAllProduct() {
+    let totalMoneyAllProduct = 0;
+    for(let code = 0; code < checkedBoxs.length; code++) {
+        let checkedBox = checkedBoxs[code];
+        if(checkedBox) {
+            let number = localStorage[code];
+            let price = allProduct[code].price;
+            let totalMoneyProduct = getTotalValueProduct({number, price, code});
+            totalMoneyAllProduct += totalMoneyProduct;
+        }
+    }
+    return totalMoneyAllProduct;
+}
+
 function renderCart() {
+    let totalMoneyAllProduct = updateTotalMoneyAllProduct();
+    renderTotalMoneyAllProduct(totalMoneyAllProduct);
     detailOrder.innerHTML =
     `<ul class="order-attribute">
         <li class="attribute" style="width: 10%;">
@@ -306,14 +328,30 @@ function renderCart() {
         renderContentProduct({product, code});
         detailOrder.append(product);
     }
-}
+    
+    let checkBoxInputs = detailOrder.querySelectorAll('.select');
 
-function updateCheckBox() {
-    let checkBoxs = document.querySelectorAll('.select');
-    for(let i = 0; i < checkBoxs.length; i++) {
-        let checkBox = checkBoxs[i];
-        let code = checkBox.getAttribute('code');
-        checkedBoxs[code] = checkBox.checked;
+    if(!isNull(checkBoxInputs)) {
+        for(let i = 0; i < checkBoxInputs.length; i++) {
+            let checkBoxInput = checkBoxInputs[i];
+            checkBoxInput.addEventListener('change', (event) => {
+                let code = checkBoxInput.getAttribute('code');
+                checkedBoxs[code] = checkBoxInput.checked;
+                totalMoneyAllProduct = updateTotalMoneyAllProduct();
+                renderTotalMoneyAllProduct(totalMoneyAllProduct);
+            });
+        }
+    }
+
+    let deleteBtns = detailOrder.querySelectorAll('button.delete');
+    for(let i = 0; i < deleteBtns.length; i++) {
+        let deleteBtn = deleteBtns[i];
+        let code = deleteBtn.getAttribute('code');
+        deleteBtn.addEventListener('click', (event) => {
+            checkedBoxs[code] = false;
+            localStorage.removeItem(code);
+            renderCart();
+        });
     }
 }
 
@@ -321,41 +359,4 @@ renderCart();
 
 window.onstorage = function() {
     renderCart();
-}
-
-function deleteItem(btn) {
-    let code = btn.getAttribute("code");
-    updateCheckBox();
-    checkedBoxs[code] = false;
-    localStorage.removeItem(code);
-    renderCart();
-}
-
-let checkBoxInputs = document.querySelectorAll('.select');
-
-function renderTotalMoneyAllProduct(totalMoneyAllProduct) {
-    let totalMoneyNode = document.querySelector('.invoice-price');
-    if(!isNull(totalMoneyNode)) {
-        totalMoneyNode.textContent = `${handleShowPrice(totalMoneyAllProduct)}Đ`;
-    }
-}
-
-if(!isNull(checkBoxInputs)) {
-    let totalMoneyAllProduct = 0;
-    for(let i = 0; i < checkBoxInputs.length; i++) {
-        let checkBoxInput = checkBoxInputs[i];
-        checkBoxInput.addEventListener('change', (event) => {
-            let code = checkBoxInput.getAttribute('code');
-            checkedBoxs[code] = checkBoxInput.checked;
-            let number = localStorage[code];
-            let price = allProduct[code].price;
-            let totalMoneyProdcut = getTotalValueProduct({number, price, code});
-            if(checkBoxInput.checked) {
-                totalMoneyAllProduct += totalMoneyProdcut;
-            } else {
-                totalMoneyAllProduct -= totalMoneyProdcut;
-            }
-            renderTotalMoneyAllProduct(totalMoneyAllProduct);
-        });
-    }
 }
