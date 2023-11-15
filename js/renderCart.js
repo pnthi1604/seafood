@@ -229,7 +229,9 @@ function createNode(nameTag, nameClass) {
     return element;
 }
 
-function getTotalValueProduct({number, price, code}) {
+function getTotalValueProduct({code}) {
+    let number = localStorage[code];
+    let price = allProduct[code].price;
     let total = Number(number) * Number(price);
     return total;
 }
@@ -240,8 +242,7 @@ function checkedBoxProduct({product, code}) {
 
 function renderContentProduct({product, code}) {
     let {src, name, price} = allProduct[code];
-    let number = localStorage[code];
-    let totalPrice = getTotalValueProduct({number, price, code});
+    let totalPrice = getTotalValueProduct({code});
     totalPrice = handleShowPrice(totalPrice);
     price = handleShowPrice(price);
     product.innerHTML = `            
@@ -289,9 +290,7 @@ function updateTotalMoneyAllProduct() {
     for(let code = 0; code < checkedBoxs.length; code++) {
         let checkedBox = checkedBoxs[code];
         if(checkedBox) {
-            let number = localStorage[code];
-            let price = allProduct[code].price;
-            let totalMoneyProduct = getTotalValueProduct({number, price, code});
+            let totalMoneyProduct = getTotalValueProduct({code});
             totalMoneyAllProduct += totalMoneyProduct;
         }
     }
