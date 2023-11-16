@@ -54,9 +54,8 @@
     border: none;
     position: absolute;
     bottom: 7px;
-    margin: 0 auto;
+    margin-left: 5%;
     display: none;
-    text-align: center;
 }
 
 @keyframes bottom-up {
@@ -237,8 +236,8 @@ section {
     }
 
     .order {
-        margin-left: 20%;
-        width: 60%;
+        margin-left: 15%;
+        width: 70%;
     }
 }
 
