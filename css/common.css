@@ -442,6 +442,14 @@ footer .enter-email button:hover {
         min-width: 240px;
     }
 
+    header .buy-now {
+        display: none !important;
+    }
+
+    header .container {
+        grid-template-columns: 30% auto 10%;
+    }
+
     header .product .link-product {
         padding-left: 20px;
     }
