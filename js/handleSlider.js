@@ -11,8 +11,6 @@ let prevBtn = document.querySelector('button.prev');
 let nextBtn = document.querySelector('button.next');
 const prevAnimation = "prev-animation";
 const nextAnimation = "next-animation";
-const prevAnimationNone = "prev-animation-none";
-const nextAnimationNone = "next-animation-none";
 
 function findCurrentItem() {
     for(let i = 0; i < items.length; i++) {
@@ -44,13 +42,10 @@ function removeClass(element, className) {
 }
 
 function handleSlider(del) {
-    debug({del});
     let index = findCurrentItem();
     let curItem = items[index];
     removeClass(curItem, prevAnimation);
     removeClass(curItem, nextAnimation);
-    removeClass(curItem, prevAnimationNone);
-    removeClass(curItem, nextAnimationNone);
     let nextIndex = handleIndex({index, del});
     let nextItem = items[nextIndex];
     nextItem.classList.add((del == -1 ? prevAnimation : nextAnimation));
@@ -61,6 +56,7 @@ function handleSlider(del) {
 prevBtn.addEventListener('click', (event) => {
     handleSlider(-1);
 });
+
 nextBtn.addEventListener('click', (event) => {
     handleSlider(1);
 });

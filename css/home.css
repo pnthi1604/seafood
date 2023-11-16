@@ -1,4 +1,6 @@
 /* START HOME */
+
+/* START SLIDER  */
 .main-slider {
     margin: 0 auto;
 }
@@ -70,6 +72,8 @@
         right: 0%;
     }
 }
+
+/* END SLIDER  */
 
 .home {
     margin-top: 40px;
