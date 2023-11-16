@@ -196,18 +196,18 @@ function isNull(element) {
 }
 
 function handleShowPrice(price) {
-    if(typeof price !== "string") {
+    if (typeof price !== "string") {
         price = price.toString();
     }
     let handlePrice = "";
     let i;
-    for(i = price.length - 1; i - 2 > 0; i -= 3) {
-        for(let j = i; j >= i - 2; j--) {
+    for (i = price.length - 1; i - 2 > 0; i -= 3) {
+        for (let j = i; j >= i - 2; j--) {
             handlePrice = price[j] + handlePrice;
         }
         handlePrice = '.' + handlePrice;
     }
-    while(i != -1) {
+    while (i != -1) {
         handlePrice = price[i] + handlePrice;
         i--;
     }
@@ -229,68 +229,60 @@ function createNode(nameTag, nameClass) {
     return element;
 }
 
-function getTotalValueProduct({code}) {
+function getTotalValueProduct({ code }) {
     let number = localStorage[code];
     let price = allProduct[code].price;
     let total = Number(number) * Number(price);
     return total;
 }
 
-function checkedBoxProduct({product, code}) {
+function checkedBoxProduct({ product, code }) {
     product.querySelector('.select').checked = checkedBoxs[code];
 }
 
-function renderContentProduct({product, code}) {
-    let {src, name, price} = allProduct[code];
-    let totalPrice = getTotalValueProduct({code});
+function renderContentProduct({ product, code }) {
+    let { src, name, price } = allProduct[code];
+    let totalPrice = getTotalValueProduct({ code });
     totalPrice = handleShowPrice(totalPrice);
     price = handleShowPrice(price);
-    product.innerHTML = `            
-        <li style="width: 10%;">
+    product.innerHTML = `                
+        <li class="check-box">
             <input type="checkbox" class="select" code="${code}">
         </li>
-        <li style="width: 50%;">
-            <div class="detail">
-                <img width="100px" src="${src}"" class="img-product">
-                <p class="name">
-                    ${name}
-                </p>
-            </div>
+        <li class="detail">
+            <img src="${src}" alt="" class="image">
+            <p class="name">${name}</p>
         </li>
-        <li style="width: 10%;">
-            <span class="price">
-                ${price}đ
-            </span>
+        <li class="price">
+            ${price}đ
         </li>
-        <li style="width: 10%;">
-            <div >
-                <span class="number">${localStorage[code]}</span>
-            </div>
+        <li class="number">
+            ${localStorage[code]}
         </li>
-        <li style="width: 10%;">${totalPrice}đ</li>
-        <li style="width: 10%;">
-            <div>
-                <button class="delete" code="${code}">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </div>
+        <li class="total-price">
+            ${totalPrice}đ
+        </li>
+        <li class="delete-product">
+            <button class="delete" code="${code}"> 
+                <i class="fa-solid fa-trash"></i>
+            </button>
         </li>`;
-    checkedBoxProduct({product, code});
+    checkedBoxProduct({ product, code });
 }
 
 function renderTotalMoneyAllProduct(totalMoneyAllProduct) {
     let totalMoneyNode = document.querySelector('.invoice-price');
-    if(!isNull(totalMoneyNode)) {
+    if (!isNull(totalMoneyNode)) {
         totalMoneyNode.textContent = `${handleShowPrice(totalMoneyAllProduct)}Đ`;
     }
 }
 
 function updateTotalMoneyAllProduct() {
     let totalMoneyAllProduct = 0;
-    for(let code = 0; code < checkedBoxs.length; code++) {
+    for (let code = 0; code < checkedBoxs.length; code++) {
         let checkedBox = checkedBoxs[code];
-        if(checkedBox) {
-            let totalMoneyProduct = getTotalValueProduct({code});
+        if (checkedBox) {
+            let totalMoneyProduct = getTotalValueProduct({ code });
             totalMoneyAllProduct += totalMoneyProduct;
         }
     }
@@ -300,38 +292,26 @@ function updateTotalMoneyAllProduct() {
 function renderCart() {
     let totalMoneyAllProduct = updateTotalMoneyAllProduct();
     renderTotalMoneyAllProduct(totalMoneyAllProduct);
-    detailOrder.innerHTML =
-    `<ul class="order-attribute">
-        <li class="attribute" style="width: 10%;">
-            <p>Chọn Sản Phẩm</p>
-        </li>
-        <li class="attribute" style="width: 50%;">
-            Sản phẩm
-        </li>
-        <li class="attribute" style="width: 10%;">
-            Đơn giá
-        </li>
-        <li class="attribute" style="width: 10%;">
-            Số lượng
-        </li>
-        <li class="attribute" style="width: 10%;">
-            Số tiền
-        </li>
-        <li class="attribute" style="width: 10%;">
-            Xóa sản phẩm
-        </li>
-    </ul>`;
+    detailOrder.innerHTML = `
+        <ul class="order-attribute">
+            <li class="attribute">Chọn</li>
+            <li class="attribute">Sản phẩm</li>
+            <li class="attribute">Giá</li>
+            <li class="attribute">SL</li>
+            <li class="attribute">Tổng</li>
+            <li class="attribute">Xóa</li>
+        </ul>`;
     for (let i = 0; i < localStorage.length; i++) {
         let code = localStorage.key(i);
         let product = createNode('ul', 'product');
-        renderContentProduct({product, code});
+        renderContentProduct({ product, code });
         detailOrder.append(product);
     }
-    
+
     let checkBoxInputs = detailOrder.querySelectorAll('.select');
 
-    if(!isNull(checkBoxInputs)) {
-        for(let i = 0; i < checkBoxInputs.length; i++) {
+    if (!isNull(checkBoxInputs)) {
+        for (let i = 0; i < checkBoxInputs.length; i++) {
             let checkBoxInput = checkBoxInputs[i];
             checkBoxInput.addEventListener('change', (event) => {
                 let code = checkBoxInput.getAttribute('code');
@@ -343,8 +323,8 @@ function renderCart() {
     }
 
     let deleteBtns = detailOrder.querySelectorAll('button.delete');
-    if(!isNull(deleteBtns)) {
-        for(let i = 0; i < deleteBtns.length; i++) {
+    if (!isNull(deleteBtns)) {
+        for (let i = 0; i < deleteBtns.length; i++) {
             let deleteBtn = deleteBtns[i];
             let code = deleteBtn.getAttribute('code');
             deleteBtn.addEventListener('click', (event) => {
@@ -358,6 +338,6 @@ function renderCart() {
 
 renderCart();
 
-window.onstorage = function() {
+window.onstorage = function () {
     renderCart();
 }

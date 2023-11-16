@@ -92,75 +92,51 @@
     </header>
 
     <main>
-        <h1 class="title">Chi tiết đơn hàng</h1>
+        <h1 class="title">Giỏ hàng</h1>
 
         <div class="detail-order">
             <ul class="order-attribute">
-                <li class="attribute" style="width: 10%;">
-                    <p>Chọn Sản Phẩm</p>
-                </li>
-                <li class="attribute" style="width: 50%;">
-                    Sản phẩm
-                </li>
-                <li class="attribute" style="width: 10%;">
-                    Đơn giá
-                </li>
-                <li class="attribute" style="width: 10%;">
-                    Số lượng
-                </li>
-                <li class="attribute" style="width: 10%;">
-                    Số tiền
-                </li>
-                <li class="attribute" style="width: 10%;">
-                    Xóa sản phẩm
-                </li>
+                <li class="attribute">Chọn</li>
+                <li class="attribute">Sản phẩm</li>
+                <li class="attribute">Giá</li>
+                <li class="attribute">SL</li>
+                <li class="attribute">Tổng</li>
+                <li class="attribute">Xóa</li>
             </ul>
-<!-- 
             <ul class="product">
-                <li style="width: 10%;">
+                <li class="check-box">
                     <input type="checkbox" class="select">
                 </li>
-                <li style="width: 50%;">
-                    <div class="detail">
-                        <img width="100px" src="../resources/img/logo.png" alt="" class="image">
-                        <p class="name">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quos!
-                        </p>
-                    </div>
+                <li class="detail">
+                    <img src="../resources/img/logo.png" alt="" class="image">
+                    <p class="name">Tên sản phẩm</p>
                 </li>
-                <li style="width: 10%;">
-                    <span class="price">
-                        22.000đ
-                    </span>
+                <li class="price">
+                    20.000đ
                 </li>
-                <li style="width: 10%;">
-                    <div >
-                        <span class="number">1</span>
-                    </div>
+                <li class="number">
+                    1
                 </li>
-                <li style="width: 10%;">22.000đ</li>
-                <li style="width: 10%;">
-                    <div>
-                        <button class="delete">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </div>
+                <li class="total">
+                    20.000đ
                 </li>
-            </ul> -->
+                <li class="delete-product">
+                    <button class="delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
-        <table class="buy">
-            <tr>
-                <td><a class="return" href="sanpham.html">TIẾP TỤC MUA HÀNG</a></td>
-                <td class="text"><p>TỔNG TIỀN THANH TOÁN</p></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="number"><p class="invoice-price">0Đ</p></td>
-            </tr>
-            <tr>
-                <td class="shopping" colspan="2"><button >TIẾN HÀNH THANH TOÁN</button></td>
-            </tr>
-        </table>
-
+        <div class="buy">
+            <button class="continue-buy">Tiếp tục mua sắm</button>
+            <div class="pay">
+                <div class="detail-pay">
+                    <div class="pay-text">Tổng tiền thanh toán</div>
+                    <div class="invoice-price">0đ</div>
+                </div>
+                <button class="shopping">Tiến hành thanh toán</button>
+            </div>
+        </div>
     </main>
 
     <footer>
