@@ -165,7 +165,8 @@ header .nav-bar {
     position: relative;
 }
 
-header .nav-bar .category {
+header .nav-bar .category,
+.nav-bar-mobile {
     margin: 0;
     padding: 10px 20px;
     font-weight: 500;
@@ -177,18 +178,46 @@ header .nav-bar .category {
     column-gap: 10px;
 }
 
+.nav-bar-mobile {
+    display: none;
+    margin: 0 auto;
+    font-size: 16px;
+    position: relative;
+}
+
+
 header .nav-bar .category:hover {
     cursor: pointer;
 }
 
-header .nav-bar .category:hover .list-product {
+.nav-bar .category:hover .list-product {
     display: block;
 }
 
-header .category .icon {
+header .nav-bar .icon,
+.nav-bar-mobile .icon {
     font-size: 25px;
-    display: inline-block;
+    width: 40px;
     padding: 8px;
+}
+
+.nav-bar-mobile .icon {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    color: #fff;
+}
+
+.nav-bar-mobile .icon:hover {
+    cursor: pointer;
+}
+
+.nav-bar-mobile .icon:hover .list-product {
+    display: none;
+}
+
+.nav-bar-mobile .icon:hover .nav-bar-mobile .list-product {
+    display: block;
 }
 
 header .category span.text-content {
@@ -205,7 +234,8 @@ header .nav-bar .list-item {
     font-weight: 550;
 }
 
-header .nav-bar .list-item .item {
+header .nav-bar .list-item .item,
+header .nav-bar-mobile .list-item .item {
     line-height: var(--height-navbar);
 }
 
@@ -235,6 +265,11 @@ header nav .list-product {
     top: 61px;
     left: 0;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.sub-nav-mobile .list-item .item {
+    display: block;   
+    padding-left: 10px;
 }
 
 header .product .link-product {
@@ -392,6 +427,23 @@ footer .enter-email button:hover {
     footer .container {
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-bar {
+        display: none !important;
+    }
+
+    .nav-bar-mobile {
+        display: block;
+        height: calc(var(--height-navbar) + 20px);
+    }
+
+    .nav-bar-mobile .category .list-product {
+        min-width: 240px;
+    }
+
+    header .product .link-product {
+        padding-left: 20px;
     }
 }
 
