@@ -95,3 +95,19 @@
     right: 2%;
     font-size: 16px;
 }
+
+/* START RESPONSIVE  */
+
+@media (min-width: 1024px) {
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+}
+
+@media (max-width: 768px) {
+    .au-form {
+        max-width: 100%;
+    }
+}
+
+/* END RESPONSIVE  */

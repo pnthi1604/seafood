@@ -5,12 +5,17 @@
     max-width: 1024px;
 }
 
-.contact-container .contact-content{
+.contact-container .contact-content {
     width: 50%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
 }
+
+.contact-container .contact-content span {
+    margin-left: 8px;
+}
+
 .contact-content div{
     display: flex;
     padding: 3px 0;
