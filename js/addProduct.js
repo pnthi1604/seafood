@@ -227,7 +227,7 @@ function addCart(code, numberOrder) {
     }
 }
 
-function HandleAddCart({numberOrder, imgSrc}) {
+function handleAddCart({numberOrder, imgSrc}) {
     if(!isNull(numberOrderNode)) {
         numberOrder = numberOrderNode.value;
     } else {
@@ -244,7 +244,7 @@ function HandleAddCart({numberOrder, imgSrc}) {
 
 if(!isNull(addCartBtn)) {
     addCartBtn.addEventListener('click', (event) => {
-        HandleAddCart({});
+        handleAddCart({});
     });
 }
 
@@ -253,11 +253,11 @@ if(!isNull(addCartBtn)) {
 
 let orderBtns = document.querySelectorAll('.order');
 
-function handerInfoProduct({orderBtn}) {
+function handleInfoProduct({orderBtn}) {
     let parentNode = orderBtn.parentNode;
     let imgNode = parentNode.querySelector('img');
     imgSrc = imgNode.getAttribute('src');
-    HandleAddCart({imgSrc});
+    handleAddCart({imgSrc});
 }
 
 if(!isNull(orderBtns)) {
@@ -265,7 +265,7 @@ if(!isNull(orderBtns)) {
         orderBtn.addEventListener('click', (event) => {
             event.stopPropagation();
             event.preventDefault();
-            handerInfoProduct({orderBtn});
+            handleInfoProduct({orderBtn});
             orderBtn.innerHTML = `
             ĐÃ THÊM<i class="fas fa-shopping-basket"></i>`;
         });
