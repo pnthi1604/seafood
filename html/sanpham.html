@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/product.css">
     <title>Sản phẩm</title>
 </head>
@@ -95,8 +96,23 @@
     </header>
 
     <main>
+        <div class="slider-wrapper">
+            <button class="prev">
+                <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button class="next">
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+            <div class="main-slider">
+                <div class="slider-item">
+                    <img src="../resources/img/anhsanpham/banner/banner.jpg" alt="">
+                </div>
+                <div class="slider-item" style="display: none;">
+                    <img src="../resources/img/anhsanpham/banner/banner0.jpg" alt="">
+                </div>
+            </div>
+        </div>
         <div class="banner">
-            <img src="../resources/img/anhsanpham/banner/banner.jpg" style="width: 100%;">
             <div class="menu">
                 <div class="cover">
                     <img src="../resources/img/anhsanpham/banner/tombn.jpg">
@@ -595,6 +611,7 @@
     </footer>
 
     <script src="../js/validatorForm.js"></script>
+    <script src="../js/handleSlider.js"></script>
     <script src="../js/showDetailProduct.js"></script>
     <script src="../js/showMenuMobile.js"></script>
     <script src="../js/addProduct.js"></script>
