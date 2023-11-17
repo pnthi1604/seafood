@@ -90,7 +90,7 @@
 
 .seafood img {
     height: 180px;
-    width: 180px;
+    max-width: 100%;
 }
 
 .seafood .detail-price {

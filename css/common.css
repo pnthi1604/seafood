@@ -46,6 +46,10 @@ header {
     min-height: calc(var(--height-header) + var(--height-navbar));
 }
 
+header .container {
+    padding-right: 10px;
+}
+
 header .container,
 footer .container {
     min-height: var(--height-header);
