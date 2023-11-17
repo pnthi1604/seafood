@@ -44,6 +44,7 @@ h1.title {
 
 .product .detail .image {
     width: 80px;
+    height: 80px;
     margin: 20px;
 }
 
@@ -135,7 +136,7 @@ button.delete i {
 @media (max-width: 768px) {
     .detail-order .order-attribute,
     .detail-order .product {
-        grid-template-columns: 12% 28% auto 6% auto 9%;
+        grid-template-columns: 12% 28% 22% 6% auto 9%;
     }
 
     .product .detail {
@@ -152,6 +153,10 @@ button.delete i {
         text-align: center;
         line-height: 40px;
         padding: 0 4px;
+    }
+
+    .delete-product .delete {
+        width: 25px;
     }
 }
 
