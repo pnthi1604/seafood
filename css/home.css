@@ -55,7 +55,7 @@
 
 @keyframes showLeftToRight {
     from {
-        left: -50%;
+        left: -20%;
         opacity: 0;
     } to {
         opacity: 1;
@@ -65,7 +65,7 @@
 
 @keyframes showRightToLeft {
     from {
-        right: -50%;
+        right: -20%;
         opacity: 0;
     } to {
         opacity: 1;
