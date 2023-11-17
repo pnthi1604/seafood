@@ -96,7 +96,7 @@ footer .enter-email button {
     background-color:var(--while-color);
     border: none;
     border-radius: 5px;
-    padding: 9px 0px;
+    padding: 11px 0px;
 }
 
 header .search button:hover,
