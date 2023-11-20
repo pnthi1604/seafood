@@ -1,4 +1,6 @@
-let products = document.querySelectorAll(".seafood");
+function isNull(element) {
+    return element == undefined;
+}
 
 let listDetailProduct = [
     {
@@ -33,6 +35,8 @@ let listDetailProduct = [
     },
 ];
 
+let products = document.querySelectorAll(".seafood");
+
 function getCodeStatusContent(type) {
     for(let i = 0; i < listDetailProduct.length; i++) {
         const detailProduct = listDetailProduct[i];
@@ -65,13 +69,17 @@ function getDetailProduct(product) {
     return {name, code, status, price, content, linkImg};
 }
 
-for (let i = 0; i < products.length; i++) {
-    let product = products[i];
-    product.addEventListener('click', (event) => {
-        event.preventDefault();
-        let detailProduct = getDetailProduct(product);
-        navigateToPage('detail.html', detailProduct);
-    });
+if(!isNull(products)) {
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        if(!isNull(product)) {
+            product.addEventListener('click', (event) => {
+                event.preventDefault();
+                let detailProduct = getDetailProduct(product);
+                navigateToPage('detail.html', detailProduct);
+            });
+        }
+    }
 }
 
 function navigateToPage(page, data) {
@@ -89,6 +97,9 @@ function getQueryParams() {
 }
 
 function renderDetailProduct({name, code, status, price, content, linkImg}) {
+    if(isNull(name) || isNull(code) || isNull(status) || isNull(price) || isNull(content) || isNull(linkImg)) {
+        return;
+    }
     let imgNode = document.querySelector('.hinh1');
     let imgMiniNode = document.querySelector('.hinh1-mini');
     let infoNode = document.querySelector('.info');

@@ -237,7 +237,7 @@ function handleAddCart({numberOrder, imgSrc}) {
         imgSrc = imgNode.getAttribute('src');
     }
     let code = findCodeProduct(imgSrc);
-    if(!isNull(code)) {
+    if(!isNull(code) && numberOrder != 0) {
         addCart(code, numberOrder);
     }
 }
@@ -251,14 +251,14 @@ if(!isNull(addCartBtn)) {
 
 // ADD CART IN SANPHAM PAGE  
 
-let orderBtns = document.querySelectorAll('.order');
-
 function handleInfoProduct({orderBtn}) {
     let parentNode = orderBtn.parentNode;
     let imgNode = parentNode.querySelector('img');
     imgSrc = imgNode.getAttribute('src');
     handleAddCart({imgSrc});
 }
+
+let orderBtns = document.querySelectorAll('.order');
 
 if(!isNull(orderBtns)) {
     orderBtns.forEach((orderBtn) => {

@@ -149,12 +149,10 @@ function showNotification(error) {
 function trySubmit(submitBtn, listInputValidate) {
     let haveInputRadio = false, validInputRadio = false;
     if(!isNull(submitBtn)) {
-        debug({submitBtn})
         submitBtn.addEventListener('click', (event) => {
             for(let i = 0; i < listInputValidate.length; i++) {
                 let input = listInputValidate[i];
                 let {status, error} = validateInput(input);
-                debug({status, error})
                 let type = input.getAttribute('type');
                 if(type == 'radio') {
                     haveInputRadio = true;

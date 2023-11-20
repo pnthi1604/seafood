@@ -98,12 +98,12 @@
                 <fieldset class="au-form-radio">
                     <legend><h2>Hình thức thanh toán</h2></legend>
                     <div>
-                        <input type="radio" id="cash" name="payment" value="cash">
-                        <label for="cash">Tiền mặt</label>
-                    </div>
-                    <div>
                         <input type="radio" id="transfer" name="payment" value="transfer">
                         <label for="transfer">Chuyển khoản</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cash" name="payment" value="cash">
+                        <label for="cash">Tiền mặt</label>
                     </div>
                 </fieldset>
                 <!-- <div class="au-form-discount">
@@ -115,7 +115,7 @@
                 </div> -->
                 <div class="au-form-control">
                     <button type="reset">Hủy</button>   
-                    <button type="submit">Đặt hàng</button>
+                    <button type="submit" class="order-pay">Đặt hàng</button>
                 </div>
 
             </form>
@@ -215,8 +215,8 @@
     </footer>
 
     <script src="../js/renderCart.js"></script>
-    <script src="../js/showPaydetail.js"></script>
     <script src="../js/validatorForm.js"></script>
+    <script src="../js/showPaydetail.js"></script>
     
 </body>
 

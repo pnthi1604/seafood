@@ -53,10 +53,14 @@ function handleSlider(del) {
     nextItem.style.display = "block";
 }   
 
-prevBtn.addEventListener('click', (event) => {
-    handleSlider(-1);
-});
+if(isNull(prevBtn)) {
+    prevBtn.addEventListener('click', (event) => {
+        handleSlider(-1);
+    });
+}
 
-nextBtn.addEventListener('click', (event) => {
-    handleSlider(1);
-});
+if(!isNull(nextBtn)) {
+    nextBtn.addEventListener('click', (event) => {
+        handleSlider(1);
+    });
+}

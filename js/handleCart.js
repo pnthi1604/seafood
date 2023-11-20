@@ -42,9 +42,7 @@ let ans = "";
 
 allProduct.forEach((product) => {
     let {src, name, price} = product;
-    ans +=         `
-    { src: "${src}", name: "${name}", price: "${price}" },
-    `;
+    ans += `{ src: "${src}", name: "${name}", price: "${price}" },`;
 });
 
 // let ans = [

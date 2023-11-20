@@ -216,12 +216,7 @@ function handleShowPrice(price) {
 
 //create array checkedBoxs
 //checkBoxs[code] == true <=> checkedBox of allProduct[code] is checked
-let checkedBoxs = [];
-for (let i = 0; i < allProduct.length; i++) {
-    checkedBoxs[i] = false;
-}
-
-let detailOrder = document.querySelector('.detail-order');
+let checkedBoxs = new Array(allProduct.length).fill(false);
 
 function createNode(nameTag, nameClass) {
     let element = document.createElement(nameTag);
@@ -289,7 +284,12 @@ function updateTotalMoneyAllProduct() {
     return totalMoneyAllProduct;
 }
 
+let detailOrder = document.querySelector('.detail-order');
+
 function renderCart() {
+    if(isNull(detailOrder)) {
+        return;
+    }
     let totalMoneyAllProduct = updateTotalMoneyAllProduct();
     renderTotalMoneyAllProduct(totalMoneyAllProduct);
     detailOrder.innerHTML = `
@@ -342,20 +342,22 @@ window.onstorage = function () {
     renderCart();
 }
 
-var checkBoxStatus = document.querySelector('.detail-order').querySelectorAll('.select');
-var isBuy = {};
-checkBoxStatus.forEach(function(checkInput){
-    isBuy[checkInput.getAttribute('code')] = false;
-})
-checkBoxStatus.forEach(function(checkInput){
-    checkInput.onchange = function(e){
-        isBuy[checkInput.getAttribute('code')] = e.target.checked;
-        console.log(isBuy);
+if(!isNull(detailOrder)) {
+    var checkBoxStatus = detailOrder.querySelectorAll('.select');
+    var isBuy = {};
+    checkBoxStatus.forEach(function(checkInput){
+        isBuy[checkInput.getAttribute('code')] = false;
+    })
+    checkBoxStatus.forEach(function(checkInput){
+        checkInput.onchange = function(e){
+            isBuy[checkInput.getAttribute('code')] = e.target.checked;
+        }
+    })
+    var url = document.querySelector('a[href="../html/thanhtoan.html"]');
+    if(!isNull(url)) {
+        url.onclick = function(e){
+            let queryparam  = '?' + new URLSearchParams(isBuy).toString();
+            this.setAttribute('href',`thanhtoan.html${queryparam}`);
+        }        
     }
-})
-var url = document.querySelector('a[href="../html/thanhtoan.html"]')
-console.log(url);
-url.onclick = function(e){
-    let queryparam  = '?' + new URLSearchParams(isBuy).toString();
-    this.setAttribute('href',`thanhtoan.html${queryparam}`);
 }
