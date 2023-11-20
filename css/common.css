@@ -54,7 +54,7 @@ header {
 header .notification {
     display: none;
     padding: 10px;
-    background-color: red;
+    background-color: var(--hover-color-navbar);
     color: #fff;
     border-radius: 5px;
     position: fixed;
