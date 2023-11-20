@@ -53,7 +53,7 @@ function handleSlider(del) {
     nextItem.style.display = "block";
 }   
 
-if(isNull(prevBtn)) {
+if(!isNull(prevBtn)) {
     prevBtn.addEventListener('click', (event) => {
         handleSlider(-1);
     });
