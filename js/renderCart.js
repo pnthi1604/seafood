@@ -341,3 +341,21 @@ renderCart();
 window.onstorage = function () {
     renderCart();
 }
+
+var checkBoxStatus = document.querySelector('.detail-order').querySelectorAll('.select');
+var isBuy = {};
+checkBoxStatus.forEach(function(checkInput){
+    isBuy[checkInput.getAttribute('code')] = false;
+})
+checkBoxStatus.forEach(function(checkInput){
+    checkInput.onchange = function(e){
+        isBuy[checkInput.getAttribute('code')] = e.target.checked;
+        console.log(isBuy);
+    }
+})
+var url = document.querySelector('a[href="../html/thanhtoan.html"]')
+console.log(url);
+url.onclick = function(e){
+    let queryparam  = '?' + new URLSearchParams(isBuy).toString();
+    this.setAttribute('href',`thanhtoan.html${queryparam}`);
+}

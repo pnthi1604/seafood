@@ -19,7 +19,7 @@
     color: var(--main-color);
 }
 .au-form-name, .au-form-phnumber, .au-form-pass,
-.au-form-pass2, .au-form-text, .au-form-email{
+.au-form-pass2, .au-form-text, .au-form-email, .au-form-address {
     display: flex;
     flex-direction: column;
     position: relative;
