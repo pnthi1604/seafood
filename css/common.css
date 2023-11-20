@@ -132,6 +132,12 @@ footer .contact .list-item .item:hover .icon {
     color: var(--while-color);
 }
 
+.list-item .item .link-social {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 header .search .icon {
     display: block;
     margin: 0 auto;
