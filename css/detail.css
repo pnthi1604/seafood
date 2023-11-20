@@ -1,3 +1,28 @@
+/* CSS COMMON  */
+
+:root {
+    --main-color: #0688cc;
+    --height-header: 100px;
+    --width-search: 85%;
+    --while-color: #fff;
+    --footer-color: #071831;
+    --black-color: #000;
+    --red-color: red;
+    --height-navbar: 40px;
+    --hover-color-navbar: #144b98;
+    --bg-color-navbar: #e5e8eb;
+}
+
+.square-style {
+    list-style-type: square !important;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* END CSS COMMON  */
+
 main .container{
     padding-top: 50px;
     font-size: 15px;
@@ -9,23 +34,24 @@ main .container{
     display: grid;
     grid-template-columns: 40% 60%;
     padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .info{
-    position: relative;
     padding-left: 30px;
 }
 
 .hinh1{
     border: 2px solid #144b98;
-    height: 400px;
-    width: 400px;
+    width: 100%;
 }
 
-.hinh1-mini{
+.hinh1-mini {
     border: 2px solid #f10f0f;
     height: 70px;
     width: 80px;
+    margin-top: 10px;
 }
 
 .h1-mini{
@@ -48,9 +74,8 @@ main .container{
     border-left: 0.5px solid #064273;
 }
 
-.detail-info{
-    display: grid;
-    grid-template-columns: 70% 30% ;
+.postimg{
+    width: 100%;
 }
 
 
@@ -80,7 +105,9 @@ h2{
     font-size: 25px;
 }
 
-.box-quantity{
+.info .box-quantity{
+    margin-top: 20px;
+    margin-bottom: 12px;
     display: grid;
     grid-template-columns: 40% 60%;
 }
@@ -89,15 +116,23 @@ h2{
     display: flex;
 }
 
+.number .number-child {
+    width: 33.33%;
+    color: var(--black-color);
+}
+
 .box-quantity button{
-    width: 35px;
     outline: none;
     background: none;
     border: 1px  solid #6a656531;
     cursor: pointer;
 }
 
-.box-quantity:hover{
+.btn-plus:hover{
+    background-color:  #ececec7f;
+}
+
+.btn-minus:hover{
     background-color:  #ececec7f;
 }
 
@@ -106,40 +141,45 @@ h2{
 }
 
 .box-quantity #amount{
-    width: 40px;
     text-align: center;
     border: 1px solid #6a656531;
-
 }
 
-.add-cart button{
-    width: 200px;
-    height: 50px;
+.add-cart {
+    margin: 0 10px;
+}
+
+.add-cart button {
+    width: 100%;
     border: none;
     background-color: #00347c;
     color: #e5e8eb ;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    padding: 12px;
 }
 
 .add-cart button:hover{
     background-color: #f10f0f;
 }
 
-.or{
+.or {
     text-align: center;
     color: #00347c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 12px;
+    padding: 12px 0;
+    font-size: 16px;
 }
 
 .call{
     text-align: center;
 }
 
-.call button{
+.call .form-numberphone {
+    margin: 10px 0;
+}
+
+.call button {
     width: 55px;
     height: 35px;
     border-radius: 5px;
@@ -151,10 +191,11 @@ h2{
 }
 
 .numberphone{
-    width: 270px;
     height: 35px;
     border: 1px  solid #6a656531;
     border-radius: 5px;
+    width: 70%;
+    padding: 0px 10px;
 }
 
 .details img{
@@ -170,6 +211,9 @@ h2{
     padding: 20px 10px ;
     
 }
+.post img{
+    width: 100%;
+}
 
 a{
     text-decoration: none;
@@ -177,7 +221,11 @@ a{
     
 }
 
-.best{
+.details{
+    padding: 0 30px;
+}
+
+/* .best{
     font-size: 18px;
     text-align: center;
     color: #00347c;
@@ -193,6 +241,10 @@ a{
     position: relative;
 }
 
+.sidebar .product{
+    min-height: 200px;
+    width: 100%;
+}
 
 .order {
     display: none;
@@ -205,26 +257,32 @@ a{
     color: #fff;
     padding-top: 7px;
     padding-left: 5px;
-    
-    
+}
+
+@keyframes bottom-up {
+    from {
+        bottom: -30px;
+        opacity: 0;
+    } to {
+        bottom: 8px;
+        opacity: 1;
+    }
 }
 
 .order .fas {
     color: #fff;
     float: right;
-    margin-top: 1px;
-    margin-right: 10px;
+    margin-right: 25px;
 }
-
 
 .product:hover .order {
     display: block;
+    animation: bottom-up 0.4s;
 }
-
 
 .order:hover {
     background-color: #00347c;
-}
+} */
 
 figcaption{
     text-align: center;
@@ -276,4 +334,108 @@ figcaption{
     font-weight: 600;
     border: none;
     border-radius: 5px;
+}
+
+/* START RESPONSIVE*/
+@media (min-width: 1024px){
+}
+
+@media (max-width:1023px) and (min-width: 769px){
+    .detail-info{
+        grid-template-columns: 1fr;
+    }
+
+    .post img{
+        width: 65%;
+        height: 65%;
+    }
+
+    .h{
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar .sb2{
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,25%);
+    }
+
+    .sidebar .product{
+        border: solid 1px #dbe6ed;
+        min-height: 230px;
+        border-radius: 5px;
+        position: relative;
+        margin: 8px 0;
+        margin-top: 8px;
+        text-align: center;
+        text-decoration: none;
+        padding: 8px 5px;
+    }
+
+    .best{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .hinh1-mini {
+        border: 2px solid #f10f0f;
+        height: 60px;
+        width: 60px;
+    }
+
+    .detail-info{
+        grid-template-columns: 1fr;
+    }
+
+    .header-main{
+        grid-template-columns: 1fr;
+    }
+
+    .hinh1{
+        width: 50%;
+        height: 50%;
+    }
+
+    .h1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .detail-info{
+        grid-template-columns: 1fr;
+    }
+    
+    .info .if1{
+        width: 100%;
+    }
+
+    .if{
+        grid-template-columns: 1fr;
+    }
+
+    .post img{
+        width: 70%;
+        height: 70%;
+    }
+
+    .h {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .box-quantity {
+        grid-template-columns: 20% 80%;
+        padding-left: 30px;
+    }
+
+    .numberphone{
+        min-width: 40%;
+    }
 }

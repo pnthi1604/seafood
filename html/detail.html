@@ -135,21 +135,21 @@
                                     <!--số lượng-->
                                     <div class="box-quantity">
                                         <div class="number">
-                                            <button class="btn-minus" onclick="handelMinus()"><i class="fa-solid fa-minus"></i></button>
-                                            <input type="text" name="amount" id="amount" value="0">
-                                            <button class="btn-plus" onclick="handelPlus()"><i class="fa-solid fa-plus"></i></button>
+                                            <button class="btn-minus number-child" onclick="handelMinus()"><i class="fa-solid fa-minus"></i></button>
+                                            <input class="number-child" type="text" name="amount" id="amount" value="0">
+                                            <button class="btn-plus number-child" onclick="handelPlus()"><i class="fa-solid fa-plus"></i></button>
                                         </div>
                                         <div class="add-cart">
                                             <button>+THÊM VÀO GIỎ</button>
                                         </div>
                                     </div>
                                     <div class="or">
-                                        <span>__________________HOẶC__________________</span>
+                                        <span>HOẶC</span>
                                     </div>
-                                    <form action class="call">
+                                    <form action class="call need-validator" action="" method="post" enctype="multipart/form-data">
                                         <p>ĐỂ LẠI SỐ ĐIỆN THOẠI ĐỂ ĐƯỢC TƯ VẤN</p>
                                         <div class="form-numberphone">
-                                            <input type="text" class="numberphone" placeholder="Nhập số điện thoại">
+                                            <input class="numberphone" type="text" id="numphone" name="phone-number" placeholder="Nhập số điện thoại">
                                             <button type="submit">GỬI</button>
                                         </div>
                                     </form>
@@ -339,18 +339,16 @@
                     <div class="box-comment">
                         <p>Trở thành người đầu tiên bình luận cho bài viết này!</p>
                         <label>NỘI DUNG BÌNH LUẬN</label>
-                        <form >
+                        <form class="need-validator" action="" method="post" enctype="multipart/form-data">
                             <div class="comment">
-                                <textarea style="height: 120px; width: 100%;" placeholder="Nhập nội dung bình luận;">
-
-                                </textarea>
+                                <textarea name="contact" style="height: 120px; width: 100%;" placeholder="Nhập nội dung bình luận;"></textarea>
                             </div>
-                            <button>Gửi Bình Luận</button>
+                            <button type="submit">Gửi Bình Luận</button>
                         </form>
                     </div>
                 </div>
                 <!--sidebar-->
-                <div class="sidebar">
+                <div class="sidebar" style="display: none;">
                     <div class="sb2">
                         <span class="best">SẢN PHẨM BÁN CHẠY</span>
                         <div class="product">
