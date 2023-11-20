@@ -63,6 +63,7 @@ header .notification {
     min-height: 50px;
     width: 300px;
     z-index: 3;
+    text-align: center;
 }
 
 header .container {
