@@ -50,6 +50,10 @@ a {
 header {
     background-color: var(--main-color);
     min-height: calc(var(--height-header) + var(--height-navbar));
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 4;   
 }
 
 header .notification {
@@ -321,7 +325,8 @@ header .product .link-product:hover {
 
 main{
     margin: 0 auto;
-    font-size: 15px
+    font-size: 15px;
+    padding-top: calc(var(--height-header) + var(--height-navbar) + 24px);
 }
 
 /* END MAIN  */
