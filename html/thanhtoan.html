@@ -12,8 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/form.css">
-    <link rel="stylesheet" href="../css/thanhtoan.css">
     <title>Thanh Toán</title>
 </head>
 
@@ -94,69 +92,70 @@
     </header>
 
     <main id="thanhtoan">
-        <div id="pay" class="au-form">
-            <h1>Thanh Toán</h1>
-            <form name="form" action="" method="post" enctype="multipart/form-data" class="need-validator">
+        <nav class="breakdown">
+            <a href="trangchu.html">Home</a>
+            <span> » Thanh Toán</span>
+        </nav>
+        <div class="thanhtoan-content">
+            <div id="pay" class="au-form">
+                <h1>Thanh Toán</h1>
+                <form name="form" action="" method="post" enctype="multipart/form-data" class="need-validator">
 
-                <fieldset>
-                    <legend><h2>Thông tin khách hàng</h2></legend>
-                    <div class="au-form-name">
-                        <label for="username">Họ và tên</label>
-                        <input type="text" id="username" name="username" autocomplete="off" placeholder="Nhập tên">
-                    </div>
-                    <div class="au-form-phnumber">
-                        <label for="numphone">Số điện thoại</label>
-                        <input type="text" id="numphone" name="phone-number" placeholder="Nhập số điện thoại">
-                    </div>
-                    <div class="au-form-email">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email" placeholder="Nhập email">
-                    </div>
-                    <div class="au-form-address">
-                        <label for="address">Địa chỉ</label>
-                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ">
-                    </div>
-                </fieldset>
+                    <fieldset>
+                        <legend><h2>Thông tin khách hàng</h2></legend>
+                        <div class="au-form-name">
+                            <label for="username">Họ và tên</label>
+                            <input type="text" id="username" name="username" autocomplete="off" placeholder="Nhập tên">
+                        </div>
+                        <div class="au-form-phnumber">
+                            <label for="numphone">Số điện thoại</label>
+                            <input type="text" id="numphone" name="phone-number" placeholder="Nhập số điện thoại">
+                        </div>
+                        <div class="au-form-email">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Nhập email">
+                        </div>
+                        <div class="au-form-address">
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" id="address" name="address" placeholder="Nhập địa chỉ">
+                        </div>
+                    </fieldset>
 
-                <fieldset class="au-form-radio">
-                    <legend><h2>Hình thức thanh toán</h2></legend>
-                    <div>
-                        <input type="radio" id="transfer" name="payment" value="transfer">
-                        <label for="transfer">Chuyển khoản</label>
+                    <fieldset class="au-form-radio">
+                        <legend><h2>Hình thức thanh toán</h2></legend>
+                        <div>
+                            <input type="radio" id="transfer" name="payment" value="transfer">
+                            <label for="transfer">Chuyển khoản</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="cash" name="payment" value="cash">
+                            <label for="cash">Tiền mặt</label>
+                        </div>
+                    </fieldset>
+                    <div class="au-form-control">
+                        <button type="reset">Hủy</button>   
+                        <button type="submit" class="order-pay">Đặt hàng</button>
                     </div>
-                    <div>
-                        <input type="radio" id="cash" name="payment" value="cash">
-                        <label for="cash">Tiền mặt</label>
-                    </div>
-                </fieldset>
-                <!-- <div class="au-form-discount">
-                    <div>Bạn có mã giảm giá
-                    <i id="discount-hand" class="fa-solid fa-hand-point-right fa-xs"></i>
-                    </div>
-                    <input type="text" name="discount" placeholder="Nhập mã giảm giá">
-                    <button>Áp dụng</button>
-                </div> -->
-                <div class="au-form-control">
-                    <button type="reset">Hủy</button>   
-                    <button type="submit" class="order-pay">Đặt hàng</button>
-                </div>
 
-            </form>
-        </div>
-
-        <div id="pay-cart"> 
-            <h2>Đơn hàng của bạn</h2>
-            
-            <div id="pay-detail">
-                <div class="pay-product">
-                    <div class="pay-product-name">Sản phẩm</div>
-                    <div class="pay-product-amount">Số lượng</div>
-                    <div class="pay-product-price">Giá</div>
-                </div>
+                </form>
             </div>
-                
-            <div id="pay-total">
-                <div>Tổng cộng</div>
+
+            <div id="pay-cart-parent"> 
+                <div id="pay-cart">
+                    <h2>Đơn hàng của bạn</h2>
+                    
+                    <div id="pay-detail">
+                        <div class="pay-product">
+                            <div class="pay-product-name">Sản phẩm</div>
+                            <div class="pay-product-amount">Số lượng</div>
+                            <div class="pay-product-price">Giá</div>
+                        </div>
+                    </div>
+                        
+                    <div id="pay-total">
+                        <div>Tổng cộng</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -228,19 +227,18 @@
                     <p class="text-content">
                         Đăng ký nhận tin
                     </p>            
-                    <form class="enter-email need-validator" action="" method="post" enctype="multipart/form-data">
+                    <form class="enter-email need-validator" action="" method="post" enctype="application/x-www-form-urlencoded">
                         <input type="text" placeholder="Nhập địa chỉ email" name="email">
-                        <button type="submit"><i class="icon letter fa-regular fa-envelope"></i></button>
+                        <button type="submit">
+                            <i class="icon letter fa-regular fa-envelope"></i>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../js/renderCart.js"></script>
-    <script src="../js/validatorForm.js"></script>
-    <script src="../js/showPaydetail.js"></script>
-    <script src="../js/showMenuMobile.js"></script>
+    <script src="../js/common.js"></script>
 </body>
 
 </html>
